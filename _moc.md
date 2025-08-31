@@ -1,33 +1,13 @@
 <%*
-/*
-================================================================================
- Скрипт для Templater: Global MOC Sync
- Версия: 4.2 (The Preservationist Engine)
- Автор: Gemini AI & User Collaboration
---------------------------------------------------------------------------------
- Назначение:
- Скрипт находит MOC-секции, строит из них карту иерархий и синхронизирует 'up'
- property во всех дочерних заметках.
-
- !!! НОВОЕ в v4.2 !!!
- 1. (СОХРАНЕНИЕ ПРОБЕЛОВ) Убрана агрессивная очистка пустых строк. Скрипт
-    больше не удаляет пустую строку между frontmatter и содержимым файла,
-    сохраняя оригинальное форматирование.
- 2. (АККУРАТНОЕ УДАЛЕНИЕ) Улучшена логика удаления свойства 'up'. Теперь
-    оно удаляется вместе со строкой, на которой находилось, не оставляя
-    после себя пустых строк и не затрагивая другие части заметки.
-================================================================================
-*/
-
 async function globalMocSyncV4_2(tp) {
   const MOC_HEADER_REGEX_G = /^(#+)\s+(.*\.\s*MOC\b[.\s]*|MOC\b[.\s]*)$/gim;
-  new Notice(`🚀 Запуск глобальной MOC-синхронизации v4.2...`, 2000);
+  new Notice(`🚀 Starting global MOC sync v4.2...`, 2000);
 
   const globalParentMap = new Map();
   const mocFileNames = new Set();
   const allFiles = app.vault.getMarkdownFiles();
 
-  new Notice(`🔍 Сканирую ${allFiles.length} файлов... (Проход 1/2)`, 3000);
+  new Notice(`🔍 Scanning ${allFiles.length} files... (Pass 1/2)`, 3000);
 
   for (const file of allFiles) {
     const fileContent = await app.vault.read(file);
@@ -68,7 +48,7 @@ async function globalMocSyncV4_2(tp) {
                     const childParents = globalParentMap.get(childFile.path);
                     if (!childParents.includes(currentParentLink)) childParents.push(currentParentLink);
                 } else {
-                    console.warn(`Ссылка на несуществующий файл "${childName}" проигнорирована.`);
+                    console.warn(`Link to non-existent file "${childName}" ignored.`);
                 }
                 currentParentLink = `[[${childName}]]`;
                 lastChildNameInLine = childName;
@@ -78,7 +58,7 @@ async function globalMocSyncV4_2(tp) {
     }
   }
 
-  new Notice(`📝 Составляю список для обновления... (Проход 2/2)`, 2000);
+  new Notice(`📝 Compiling update list... (Pass 2/2)`, 2000);
   const filesWithUp = new Set();
   for (const file of allFiles) {
     const cache = app.metadataCache.getFileCache(file);
@@ -88,14 +68,12 @@ async function globalMocSyncV4_2(tp) {
   }
   
   const filesToProcess = new Set([...globalParentMap.keys(), ...filesWithUp]);
-  if (mocFileNames.size === 0) { new Notice(`🟡 Не найдено MOC-секций.`, 5000); return; }
-  // --- ИЗМЕНЕНИЕ ЗДЕСЬ ---
-  // Уведомление сокращено, чтобы не переполнять экран. Выводится только количество.
-  new Notice(`✅ Найдено ${mocFileNames.size} MOC-источников.`, 4000);
-  if (filesToProcess.size === 0) { new Notice("ℹ️ Не найдено файлов для обновления.", 3000); return; }
+  if (mocFileNames.size === 0) { new Notice(`🟡 No MOC sections found.`, 5000); return; }
+  new Notice(`✅ Found ${mocFileNames.size} MOC sources.`, 4000);
+  if (filesToProcess.size === 0) { new Notice("ℹ️ No files found to update.", 3000); return; }
 
   let updatedCount = 0;
-  new Notice(`⏳ Обновляю ${filesToProcess.size} заметок...`, 3000);
+  new Notice(`⏳ Updating ${filesToProcess.size} notes...`, 3000);
   
   for (const childPath of filesToProcess) {
     const childFile = app.vault.getAbstractFileByPath(childPath);
@@ -133,38 +111,30 @@ async function globalMocSyncV4_2(tp) {
 
       if (hasUp) {
         if (newUpYaml) {
-          // Заменяем существующее свойство 'up' на новое
           newContent = content.replace(upRegex, newUpYaml);
         } else {
-          // >>>>>>>>>> ИЗМЕНЕНИЕ 1: АККУРАТНОЕ УДАЛЕНИЕ <<<<<<<<<<
-          // Удаляем 'up' И следующий за ним перенос строки, чтобы не оставлять дыр.
-          // `\s*` захватывает пробелы, `(\r\n|\n)?` - опциональный перенос строки.
           const upWithTrailingNewlineRegex = /^up:.*(?:(?:\r\n|\n) {2}-.*)*\s*(\r\n|\n)?/m;
           newContent = content.replace(upWithTrailingNewlineRegex, '');
         }
       } else if (newUpYaml) {
-        // Если 'up' не найдено, но нужно добавить, вставляем его после открывающего '---'
         newContent = content.replace(/^---\s*(\r\n|\n)/, `---\n${newUpYaml}\n`);
       }
       
-      // >>>>>>>>>> ИЗМЕНЕНИЕ 2: УБРАНА АГРЕССИВНАЯ ОЧИСТКА <<<<<<<<<<
-      // Просто возвращаем измененный контент без дополнительной обработки.
-      // Это сохраняет пустые строки после frontmatter.
       return newContent;
     });
 
     updatedCount++;
   }
 
-  let summary = `✅ Глобальная синхронизация завершена.\nОбработано MOC-источников: ${mocFileNames.size}.\n`;
-  summary += (updatedCount > 0) ? `Обновлено/очищено 'up' в ${updatedCount} файлах.\n` : `Все 'up' атрибуты уже были актуальны.\n`;
+  let summary = `✅ Global sync complete.\nProcessed MOC sources: ${mocFileNames.size}.\n`;
+  summary += (updatedCount > 0) ? `Updated/cleared 'up' in ${updatedCount} files.\n` : `All 'up' attributes were already up to date.\n`;
   new Notice(summary, 15000);
 }
 
 try {
   await globalMocSyncV4_2(tp);
 } catch (e) {
-  new Notice("❌ Произошла критическая ошибка. См. консоль разработчика (Ctrl+Shift+I).", 10000);
+  new Notice("❌ A critical error occurred. See developer console (Ctrl+Shift+I).", 10000);
   console.error("Templater script error:", e);
 }
 %>
