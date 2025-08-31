@@ -80,7 +80,11 @@ if (matches.length > 0) {
 
         if (await app.vault.adapter.exists(filePath)) { continue; }
         
-        const aliasesYamlBlock = `\n  - ${originalTaskName}`;
+        // --- MODIFICATION 1 START ---
+        // Escape double quotes inside the alias and wrap the whole thing in double quotes.
+        const escapedAlias = originalTaskName.replace(/"/g, '\\"');
+        const aliasesYamlBlock = `\n  - "${escapedAlias}"`;
+        // --- MODIFICATION 1 END ---
 
         const newFileContent = `---
 aliases: ${aliasesYamlBlock}
@@ -147,7 +151,11 @@ due:
         return;
     }
     
-    const aliasesYamlBlock = `\n  - ${cleanTaskName}`;
+    // --- MODIFICATION 2 START ---
+    // Escape double quotes inside the alias and wrap the whole thing in double quotes.
+    const escapedAlias = cleanTaskName.replace(/"/g, '\\"');
+    const aliasesYamlBlock = `\n  - "${escapedAlias}"`;
+    // --- MODIFICATION 2 END ---
 
     const newFileContent = `---
 aliases: ${aliasesYamlBlock}
