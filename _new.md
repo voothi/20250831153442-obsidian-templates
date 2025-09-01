@@ -18,7 +18,7 @@ function sanitizeName(inputString) {
     let cleanedForSplitting = processedString.replace(/[^a-zA-Zа-яА-ЯёЁ0-9\s-]/g, '');
 
     const words = cleanedForSplitting.trim().split(/\s+/);
-    const firstWords = words.slice(0, 6); // Use up to 6 words
+    const firstWords = words.slice(0, 3); // Use up to 6 words
     let finalName = firstWords.join('-');
 
     // NEW: Clean up any trailing hyphens that might result from punctuation at the end.
