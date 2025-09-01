@@ -18,7 +18,7 @@ function sanitizeName(inputString) {
     let cleanedForSplitting = processedString.replace(/[^a-zA-Zа-яА-ЯёЁ0-9\s-]/g, '');
 
     const words = cleanedForSplitting.trim().split(/\s+/);
-    const firstWords = words.slice(0, 3); // Use up to 6 words
+    const firstWords = words.slice(0, 6); // Use up to 6 words
     let finalName = firstWords.join('-');
 
     // NEW: Clean up any trailing hyphens that might result from punctuation at the end.
@@ -80,11 +80,7 @@ if (matches.length > 0) {
 
         if (await app.vault.adapter.exists(filePath)) { continue; }
         
-        // --- MODIFICATION 1 START ---
-        // Escape double quotes inside the alias and wrap the whole thing in double quotes.
-        const escapedAlias = originalTaskName.replace(/"/g, '\\"');
-        const aliasesYamlBlock = `\n  - "${escapedAlias}"`;
-        // --- MODIFICATION 1 END ---
+        const aliasesYamlBlock = `\n  - ${originalTaskName}`;
 
         const newFileContent = `---
 aliases: ${aliasesYamlBlock}
@@ -151,11 +147,7 @@ due:
         return;
     }
     
-    // --- MODIFICATION 2 START ---
-    // Escape double quotes inside the alias and wrap the whole thing in double quotes.
-    const escapedAlias = cleanTaskName.replace(/"/g, '\\"');
-    const aliasesYamlBlock = `\n  - "${escapedAlias}"`;
-    // --- MODIFICATION 2 END ---
+    const aliasesYamlBlock = `\n  - ${cleanTaskName}`;
 
     const newFileContent = `---
 aliases: ${aliasesYamlBlock}
