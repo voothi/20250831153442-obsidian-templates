@@ -84,7 +84,7 @@ if (matches.length > 0) {
 
         const newFileContent = `---
 aliases: ${aliasesYamlBlock}
-up: "[[${parentTitle}]]"
+up: [[${parentTitle}]]
 type: 
 status: 
 down: 
@@ -151,7 +151,7 @@ due:
 
     const newFileContent = `---
 aliases: ${aliasesYamlBlock}
-up: "[[${parentTitle}]]"
+up: [[${parentTitle}]]
 type: 
 status: 
 down: 
