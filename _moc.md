@@ -94,9 +94,9 @@ async function globalMocSyncV4_2(tp) {
     await app.vault.process(childFile, (content) => {
       let newUpYaml = '';
       if (uniqueNewParents.length === 1) {
-        newUpYaml = `up: ${uniqueNewParents[0]}`;
+        newUpYaml = `up: "${uniqueNewParents[0]}"`;
       } else if (uniqueNewParents.length > 1) {
-        newUpYaml = `up:\n${uniqueNewParents.map(p => `  - ${p}`).join('\n')}`;
+        newUpYaml = `up:\n${uniqueNewParents.map(p => `  - "${p}"`).join('\n')}`;
       }
 
       const upRegex = /^up:.*(?:(?:\r\n|\n) {2}-.*)*/m;
