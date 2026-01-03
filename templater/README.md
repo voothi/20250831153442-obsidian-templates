@@ -8,6 +8,7 @@ This folder contains the core automation logic for the Zettelkasten workflow. Th
 - [`_new.md`: Smart Note Creation](#_newmd-smart-note-creation)
 - [`_update.md`: Title & Backlink Sync](#_updatemd-title--backlink-sync)
 - [`_moc.md`: Map of Content synchronization](#_mocmd-map-of-content-synchronization)
+- [Usage Examples: `_new.md`](#usage-examples-_newmd)
 - [Installation & Hotkeys](#installation--hotkeys)
 
 ---
@@ -62,6 +63,35 @@ The "Engine" for hierarchical navigation.
 | MOC Scanning | Frontmatter Update |
 | :--- | :--- |
 | ![MOC Scanning](../assets/20260103192534.png) | ![Frontmatter Update](../assets/20260103192542.png) |
+
+[Return to Top](#table-of-contents)
+
+---
+
+## Usage Examples: `_new.md`
+
+### Case 1: Convert Raw ZID Lines to Linked Notes
+Turn a selection of ideas/tasks starting with 14-digit timestamps (ZIDs) into clean Wikilinks while splitting the content.
+
+**Input (Selection):**
+```text
+20251226135208 Это первое предложение первой записи. Второе предложение первой записи, которое должно попасть внутрь файла.
+
+- [ ] 20251226135257 Это первое предложение второй записи. Второе предложение.
+```
+
+**Output (Updated Selection):**
+```text
+[[20251226135208-это-первое-предложение-первой-записи|Это первое предложение первой записи.]]
+
+- [ ] [[20251226135257-это-первое-предложение-второй-записи|Это первое предложение второй записи.]]
+```
+
+**What happens:**
+- **Title Extraction**: The first sentence (up to the first `.`) becomes the Wikilink label.
+- **Content Migration**: All subsequent sentences are automatically moved into the new note's description.
+- **Structure**: Indentation and list markers (`- [ ]`) are preserved.
+- **Batching**: Processes all selected ZID lines in one click.
 
 [Return to Top](#table-of-contents)
 
