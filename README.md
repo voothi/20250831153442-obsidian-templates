@@ -12,7 +12,6 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
   - [Daily Note Templates](#daily-note-templates)
 - [Workflow & Features](#workflow--features)
 - [Installation](#installation)
-- [Installation](#installation)
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
 - [Syncing](#syncing)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
