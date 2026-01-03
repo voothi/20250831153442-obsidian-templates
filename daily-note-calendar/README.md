@@ -12,7 +12,7 @@ This folder contains the templates and configuration details for the daily journ
 ---
 
 ## Daily Structure
-`day-planner.md` [File Link](day-planner.md)
+[day-planner.md](day-planner.md)
 A high-density planning template designed for focus and productivity.
 
 ### Features

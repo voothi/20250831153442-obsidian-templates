@@ -37,7 +37,7 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 [Return to Top](#table-of-contents)
 
 ## Title & Backlink Sync
- [_update.md](_update.md)
+[_update.md](_update.md)
 Ensures that human-readable titles remain consistent throughout the vault.
 
 ### Features
@@ -52,7 +52,7 @@ Ensures that human-readable titles remain consistent throughout the vault.
 [Return to Top](#table-of-contents)
 
 ## Map of Content Synchronization
-[`_moc.md`](_moc.md)
+[_moc.md](_moc.md)
 
 The structural engine of the vault. It scans for specific headers to build and maintain the logical hierarchy of your notes.
 
