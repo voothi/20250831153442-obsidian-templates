@@ -92,18 +92,15 @@ Essential for running the `.md` scripts autonomously.
   - `Alt + A`: `templates/_moc.md`
   - `Alt + S`: `templates/_update.md`
 
-### [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes)
-Manages the structure of your journal.
+### [Daily Note Calendar](https://github.com/quandv/obsidian-daily-note-calendar)
+Provides the calendar interface and manages temporal note structures.
+- **General**: Enable "Display notes created on selected date" and "Display an indicator on each date that has a note".
+- **Notes Settings**: Display order set to **Ascending**.
 - **Daily Notes**:
   - **Format**: `yyyy-MM-dd`
   - **Folder**: `voothi/journal/daily`
   - **Template**: `templates/day-planner.md`
-- **Weekly Notes**: `yyyy-ww` in `Weekly notes`.
-- **Monthly Notes**: `yyyy-MM` in `Monthly notes`.
-
-### [Daily Note Calendar](https://github.com/quandv/obsidian-daily-note-calendar)
-- **General**: Enable "Display notes created on selected date" and "Display an indicator on each date that has a note".
-- **Notes Settings**: Display order set to **Ascending**.
+- **Weekly/Monthly/Quarterly/Yearly**: Configured to point to their respective folders (e.g., `Weekly notes`, `Monthly notes`).
 
 ### [Obsidian Git](https://github.com/Vinzent03/obsidian-git)
 Highly recommended for version control and syncing. ([obsidian://show-plugin?id=obsidian-git](obsidian://show-plugin?id=obsidian-git))
