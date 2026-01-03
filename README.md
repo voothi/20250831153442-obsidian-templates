@@ -9,9 +9,9 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Description](#description)
 - [Templates Overview](#templates-overview)
   - [Templater Scripts](#templater-scripts)
-    - [_new.md](#_newmd)
-    - [_update.md](#_updatemd)
-    - [_moc.md](#_mocmd)
+    - [Automated Creation](#automated-creation)
+    - [Seamless Renaming](#seamless-renaming)
+    - [Automated Hierarchy](#automated-hierarchy)
   - [Daily Note Templates](#daily-note-templates)
     - [day-planner.md](#day-plannermd)
 - [The ZID System: Philosophy & Standards](#the-zid-system-philosophy--standards)
@@ -65,7 +65,7 @@ Key capabilities include:
 
 ### Templater Scripts
 
-#### _new.md
+## Automated Creation
 [_new.md](templater/_new.md)
 
 The primary script for creating new notes. 
@@ -78,7 +78,7 @@ The primary script for creating new notes.
 > [!TIP]
 > **Planned Enhancement**: Future versions will improve handling of nested ZID entries within sentences, automatically splitting them into new lines and processing them recursively.
 
-#### _update.md
+## Seamless Renaming
 [_update.md](templater/_update.md)
 
 Maintains consistency across your vault.
@@ -86,7 +86,7 @@ Maintains consistency across your vault.
   - Updates the `aliases` in the current file based on the H1 header.
   - Automatically searches for and updates backlinks in other files to reflect the new title, ensuring display text stays in sync.
 
-#### _moc.md
+## Automated Hierarchy
 [_moc.md](templater/_moc.md)
 
 The engine for your Map of Content.
