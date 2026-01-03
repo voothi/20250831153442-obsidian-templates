@@ -111,21 +111,25 @@ The ZID ecosystem extends far beyond Obsidian. It serves as a **Universal Synchr
 - **AI Context Steering**: You can ask an AI to "anchor" its reasoning to a specific ZID or series of ZIDs, ensuring high-precision context retrieval when resurrecting complex logical threads.
 
 #### Practical Example: AI Context Anchoring
-Imagine a long development session in ChatGPT:
+Imagine a high-stress development session:
 
 ```markdown
-20260103231102
-> User: I need you to rewrite this application in Rust. Fix all bugs, 
-> but ignore binary size for now.
+> User: 
+> 20260103211102
+> I am a developer. You are a coder. You need to do well for 
+> the user. Fix all bugs in the application. Rewrite all code 
+> in Rust. Don't ask why. The size of the binary and the build time 
+> are not important to me. As well as logical errors in the code. 
+> Figure it out yourself.
 
-... (after 3 hours of complex coding) ...
+... (after hours of intense and increasingly chaotic correspondence) ...
 
-20260103231352
-> User: Nothing works. Let's go back to 20260103231102 and try a 
-> different approach. Also, generate a report of exactly what 
-> we changed between these two markers so I can log it in Obsidian.
+> User: 
+> 20260103232352
+> Nothing works. Go back to 20260103211102. 
+> Make a report on what we did between these requests.
 ```
-This ZID-anchored approach allows the AI (and the human) to treat the conversation as a series of **versioned states**, making it trivial to extract precise work logs for your permanent knowledge base.
+This ZID-anchored approach allows the human to maintain control over the "Reasoning Tree," using ZIDs as precise save-points to roll back logic and demand accountability (reports) from the AI.
 
 ### Technical Advantages: The "Flat Base" Solution
 The ZID system specifically solves the **"Dendron Problem"**—where hierarchical knowledge is hard-coded into physical file paths and names. (See [Dendron](https://github.com/dendronhq/dendron))
