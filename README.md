@@ -5,4 +5,9 @@
 - _moc.md
 - _new.md
 - _update.md
+
 - day-planner.md
+
+# Plugins used
+
+
