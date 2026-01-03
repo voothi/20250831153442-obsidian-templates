@@ -21,6 +21,7 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
 - [Syncing](#syncing)
 - [Browser Integration: Wikilinks on GitHub](#browser-integration-wikilinks-on-github)
+- [Migration from Dendron.so](#migration-from-dendronso)
 - [Release Notes](#release-notes)
 - [RFCs](#rfcs)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
@@ -190,6 +191,16 @@ For mobile synchronization via Git, consider using **[GitSync](https://github.co
 
 ## Browser Integration: Wikilinks on GitHub
 If you host your vault repository on **GitHub.com**, you can enable native Wikilink navigation in your browser using the **[Wikilink Helper](https://github.com/voothi/20251231141931-wikilink-helper)** Chrome extension. This tool automatically converts standard `[[Wikilink]]` syntax into clickable links while browsing your files on GitHub, allowing you to traverse your knowledge base without leaving the browser.
+
+[Return to Top](#table-of-contents)
+
+## Migration from Dendron.so
+A dedicated suite of utilities is planned for publication to help users migrate from **Dendron.so** to the ZID-based Obsidian workflow. These tools were developed and utilized during the transition of this knowledge base and focus on overcoming common technical hurdles:
+
+- **[Dendron to Obsidian Migration](https://github.com/voothi/20241212174401-dendron-to-obsidian)**: The primary repository for the personal knowledge base migration project.
+- **[Test ABCD](https://github.com/voothi/20241218084057-test-abcd)**: Testing framework for migration logic.
+- **[Path Length Utilities](https://github.com/voothi/20241219143657-path-length)**: Tools to manage and refactor excessive path lengths during conversion to a flat structure.
+- **[Line Ending Converter (LF)](https://github.com/voothi/20241220151407-convert-to-lf)**: Ensures cross-platform compatibility by standardizing line endings.
 
 [Return to Top](#table-of-contents)
 
