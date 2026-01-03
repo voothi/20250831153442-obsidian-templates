@@ -86,7 +86,7 @@ The **Zettelkasten ID (ZID)** is the heartbeat of this ecosystem. It is a strict
 The ZID is not just a name; it's a key. By keeping the ZID in the filename and YAML, external tools and internal scripts can always find the "truth" of the note, even if you rename `20260103205223-old-theory.md` to `20260103205223-proven-law.md`.
 
 ### Technical Advantages: The "Flat Base" Solution
-The ZID system specifically solves the **"Dendron Problem"**—where hierarchical knowledge is hard-coded into physical file paths and names. 
+The ZID system specifically solves the **"Dendron Problem"**—where hierarchical knowledge is hard-coded into physical file paths and names. (See [Dendron](https://github.com/dendronhq/dendron))
 
 - **Breaking the Filesystem Chain**: Unlike hierarchical systems that rigidly nail your structure to the OS filesystem, this system uses a **flat directory structure**. 
 - **Escape OS Limitations**: By decoupling hierarchy from paths, you avoid issues with maximum path lengths and invalid filename characters that often break Git synchronization on Android and other mobile platforms.
