@@ -106,6 +106,7 @@ The ZID system specifically solves the **"Dendron Problem"**—where hierarchica
 - **Breaking the Filesystem Chain**: Unlike hierarchical systems that rigidly nail your structure to the OS filesystem, this system uses a **flat directory structure**. 
 - **Escape OS Limitations**: By decoupling hierarchy from paths, you avoid issues with maximum path lengths and invalid filename characters that often break Git synchronization on Android and other mobile platforms.
 - **Outliner-style Nesting**: The logical structure is hardwired into **Frontmatter** and **Backlinks**, maintained by the `_moc.md` engine. You can achieve infinite nesting depths (similar to Logseq or Workflowy) without ever deep-nesting a folder on your drive.
+- **Recursive Search Discovery**: Because the ZID is present in both the filename and the file content, the system is natively compatible with *any* search engine or operating system. You can find any note or its relations using standard recursive search (grepping) by ZID across filenames and deep within file contents, ensuring your knowledge is never "locked" into a specific app's database.
 
 ### Comparison: Beyond the Logseq Block Model
 While Logseq and similar outliners offer great flexibility, the ZID-based atomic approach provides several critical advantages:
