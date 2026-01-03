@@ -67,8 +67,6 @@ A structured template for daily planning.
 
 [Return to Top](#table-of-contents)
 
----
-
 ## The ZID System: Philosophy & Standards
 
 The **Zettelkasten ID (ZID)** is the heartbeat of this ecosystem. It is a strictly formatted 14-digit timestamp (`YYYYMMDDHHMMSS`) used as a permanent, immutable identifier for every atomic unit of knowledge.
@@ -102,8 +100,6 @@ To maintain this portability and flexibility, we follow strict linking rules:
 
 [Return to Top](#table-of-contents)
 
----
-
 ## Physical Folders: Boundaries of Responsibility
 
 In this ecosystem, physical catalogs (folders) serve a specific, non-hierarchical purpose. They are the **watersheds between boundaries of responsibility**.
@@ -119,8 +115,6 @@ A key challenge of this modular approach is **Link Integrity** when sharing part
 - **Link Auditing**: Future enhancements include developing dedicated scripts to audit and refactor links before delegation. These scripts will help identify "external dependencies" and ensure that the shared unit remains fully functional and contextually complete for the recipient.
 
 [Return to Top](#table-of-contents)
-
----
 
 ## Workflow & Features
 - **ZID Integration**: Uses 14-digit timestamps (YYYYMMDDHHMMSS) for unique note identification.
