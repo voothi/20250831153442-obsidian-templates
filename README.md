@@ -205,7 +205,9 @@ A key challenge of this modular approach is **Link Integrity** when sharing part
 
 This workflow relies on specific configurations for the following plugins:
 
-### [Templater](https://github.com/SilentVoid13/Templater)
+### Templater
+[Plugin Link](https://github.com/SilentVoid13/Templater)
+
 Essential for running the `.md` scripts autonomously.
 - **Folder Templates**: Auto-trigger `templates/day-planner.md` when creating new files in `voothi/journal/daily`.
 - **Options**: 
@@ -216,7 +218,9 @@ Essential for running the `.md` scripts autonomously.
   - `Alt + A`: `templates/_moc.md`
   - `Alt + S`: `templates/_update.md`
 
-### [Daily Note Calendar](https://github.com/quandv/obsidian-daily-note-calendar)
+### Daily Note Calendar
+[Plugin Link](https://github.com/quandv/obsidian-daily-note-calendar)
+
 Provides the calendar interface and manages temporal note structures.
 - **General**: Enable "Display notes created on selected date" and "Display an indicator on each date that has a note".
 - **Notes Settings**: Display order set to **Ascending**.
@@ -226,7 +230,9 @@ Provides the calendar interface and manages temporal note structures.
   - **Template**: `templates/day-planner.md`
 - **Weekly/Monthly/Quarterly/Yearly**: Configured to point to their respective folders (e.g., `Weekly notes`, `Monthly notes`).
 
-### [Obsidian Git](https://github.com/Vinzent03/obsidian-git)
+### Obsidian Git
+[Plugin Link](https://github.com/Vinzent03/obsidian-git)
+
 Highly recommended for version control and syncing. ([obsidian://show-plugin?id=obsidian-git](obsidian://show-plugin?id=obsidian-git))
 
 [Return to Top](#table-of-contents)
