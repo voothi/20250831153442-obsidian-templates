@@ -27,6 +27,8 @@ A high-density planning template designed for focus and productivity.
 ![Day Planner in action](../assets/20260103192556.png)
 ````
 
+[Return to Top](#table-of-contents)
+
 ---
 
 ## Calendar Integration
@@ -42,6 +44,8 @@ The **Daily Note Calendar** plugin provides the primary interface for navigating
 ### Visual Guide
 ![Calendar Plugin Settings](../assets/20260103192356.png)
 
+[Return to Top](#table-of-contents)
+
 ---
 
 ## Healthy Habits & Workflow
@@ -52,4 +56,4 @@ The template encourages a disciplined daily routine:
 
 ![Daily Note Example](../assets/20260103192443.png)
 
-[Return to Root README](../README.md)
+[Return to Top](#table-of-contents)

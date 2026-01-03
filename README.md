@@ -22,7 +22,7 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 ## Description
 This repository contains advanced [Templater](https://github.com/SilentVoid13/Templater) scripts and structural templates for Obsidian.md. It focuses on automating note creation, metadata synchronization, and Map of Content (MOC) management using Zettelkasten IDs (ZID).
 
-[Return to Top](#obsidian-templates--workflows)
+[Return to Top](#table-of-contents)
 
 ## Templates Overview
 
@@ -61,21 +61,21 @@ A structured template for daily planning.
   - Integrated ZID links for rapid note referencing during the day.
   - Pre-allocated slots for health, work, and personal development.
 
-[Return to Top](#obsidian-templates--workflows)
+[Return to Top](#table-of-contents)
 
 ## Workflow & Features
 - **ZID Integration**: Uses 14-digit timestamps (YYYYMMDDHHMMSS) for unique note identification.
 - **Hierarchical Navigation**: Uses the `up` field in frontmatter for breadcrumb-style navigation, automated by `_moc.md`.
 - **Primary Primary Aliases**: The first entry in the `aliases` YAML field is treated as the primary "human-readable" title.
 
-[Return to Top](#obsidian-templates--workflows)
+[Return to Top](#table-of-contents)
 
 ## Installation
 1. Copy the contents of the `templater/` directory to your Obsidian vault's template folder.
 2. Configure **Templater** settings to point to this folder.
 3. (Optional) Copy `daily-note-calendar/day-planner.md` to your daily notes template folder.
 
-[Return to Top](#obsidian-templates--workflows)
+[Return to Top](#table-of-contents)
 
 ## Plugin Setup & Hotkeys
 
@@ -105,12 +105,12 @@ Provides the calendar interface and manages temporal note structures.
 ### [Obsidian Git](https://github.com/Vinzent03/obsidian-git)
 Highly recommended for version control and syncing. ([obsidian://show-plugin?id=obsidian-git](obsidian://show-plugin?id=obsidian-git))
 
-[Return to Top](#obsidian-templates--workflows)
+[Return to Top](#table-of-contents)
 
 ## Syncing
 For mobile synchronization via Git, consider using **[GitSync](https://github.com/ViscousPot/GitSync)**.
 
-[Return to Top](#obsidian-templates--workflows)
+[Return to Top](#table-of-contents)
 
 ## Kardenwort Ecosystem
 This project is part of the **[Kardenwort](https://github.com/kardenwort)** environment, designed to create a focused and efficient learning ecosystem.

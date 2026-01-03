@@ -32,6 +32,8 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 ![Batch Processing Result](../assets/20260103192431.png)
 ````
 
+[Return to Top](#table-of-contents)
+
 ---
 
 ## `_update.md`: Title & Backlink Sync
@@ -47,6 +49,8 @@ Ensures that human-readable titles remain consistent throughout the vault.
 <!-- slide -->
 ![Backlink Refresh](../assets/20260103192523.png)
 ````
+
+[Return to Top](#table-of-contents)
 
 ---
 
@@ -65,6 +69,8 @@ The "Engine" for hierarchical navigation.
 ![Frontmatter Update](../assets/20260103192542.png)
 ````
 
+[Return to Top](#table-of-contents)
+
 ---
 
 ## Installation & Hotkeys
@@ -77,4 +83,4 @@ To use these scripts, copy them to your Templater templates folder and assign th
 | `_moc.md` | `Alt + A` | Synchronize Global MOCs |
 | `_update.md` | `Alt + S` | Update titles & backlinks |
 
-[Return to Root README](../README.md)
+[Return to Top](#table-of-contents)
