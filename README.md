@@ -12,7 +12,8 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
   - [Daily Note Templates](#daily-note-templates)
 - [Workflow & Features](#workflow--features)
 - [Installation](#installation)
-- [Plugins Used](#plugins-used)
+- [Installation](#installation)
+- [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
 - [Syncing](#syncing)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
 - [License](#license)
@@ -77,10 +78,38 @@ A structured template for daily planning.
 
 [Return to Top](#obsidian-templates--workflows)
 
-## Plugins Used
-- **[Templater](https://github.com/SilentVoid13/Templater)**: Essential for running the `.md` scripts.
-- **[Obsidian Git](https://github.com/Vinzent03/obsidian-git)**: Highly recommended for version control and syncing. ([obsidian://show-plugin?id=obsidian-git](obsidian://show-plugin?id=obsidian-git))
-- **[Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes)**: For daily note calendar integration.
+## Plugin Setup & Hotkeys
+
+This workflow relies on specific configurations for the following plugins:
+
+### [Templater](https://github.com/SilentVoid13/Templater)
+Essential for running the `.md` scripts autonomously.
+- **Folder Templates**: Auto-trigger `templates/day-planner.md` when creating new files in `voothi/journal/daily`.
+- **Options**: 
+  - Enable **Trigger Templater on new file creation**.
+  - Enable **Syntax highlighting** (desktop & mobile).
+- **Template Hotkeys**:
+  - `Alt + Q`: `templates/_new.md`
+  - `Alt + A`: `templates/_moc.md`
+  - `Alt + S`: `templates/_update.md`
+
+### [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes)
+Manages the structure of your journal.
+- **Daily Notes**:
+  - **Format**: `yyyy-MM-dd`
+  - **Folder**: `voothi/journal/daily`
+  - **Template**: `templates/day-planner.md`
+- **Weekly Notes**: `yyyy-ww` in `Weekly notes`.
+- **Monthly Notes**: `yyyy-MM` in `Monthly notes`.
+
+### [Daily Note Calendar](https://github.com/quandv/obsidian-daily-note-calendar)
+- **General**: Enable "Display notes created on selected date" and "Display an indicator on each date that has a note".
+- **Notes Settings**: Display order set to **Ascending**.
+
+### [Obsidian Git](https://github.com/Vinzent03/obsidian-git)
+Highly recommended for version control and syncing. ([obsidian://show-plugin?id=obsidian-git](obsidian://show-plugin?id=obsidian-git))
+
+[Return to Top](#obsidian-templates--workflows)
 
 ## Syncing
 For mobile synchronization via Git, consider using **[GitSync](https://github.com/ViscousPot/GitSync)**.
