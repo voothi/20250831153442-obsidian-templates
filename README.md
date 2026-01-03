@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/voothi/20250831153442-obsidian-templates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A **ZID-First** Zettelkasten workflow for Obsidian.md, featuring a flat-directory architecture that decouples hierarchy from the filesystem. This system enables many-to-many knowledge structures, cross-platform chronographic traceability, and seamless AI collaboration.
+A curated collection of Obsidian templates and scripts for Templater and Daily Notes, designed for an efficient Zettelkasten-style workflow. It implements a **ZID-based** "Flat Base" architecture that decouples hierarchy from the filesystem, enabling many-to-many knowledge structures and seamless AI collaboration.
 
 ## Table of Contents
 - [Description](#description)
@@ -52,7 +52,7 @@ A **ZID-First** Zettelkasten workflow for Obsidian.md, featuring a flat-director
 ---
 
 ## Description
-This repository provides a production-ready knowledge management system built on **Zettelkasten IDs (ZIDs)**. Unlike filesystem-dependent approaches (like Dendron), it implements a "Flat Base" architecture where all notes reside at a single directory level, with logical hierarchy maintained purely through frontmatter and backlinks. Key capabilities include: **1)** A `_moc.md` engine that automates many-to-many parent-child relationships, **2)** AI-centric workflows leveraging ZID pivots for hypothesis branching and prompt versioning, and **3)** native cross-platform traceability, enabling you to synchronize context between Obsidian, ChatGPT, and external logs using a single timestamp.
+This repository contains advanced [Templater](https://github.com/SilentVoid13/Templater) scripts and structural templates for Obsidian.md. It focuses on automating note creation, metadata synchronization, and Map of Content (MOC) management using Zettelkasten IDs (ZID). Key capabilities include a `_moc.md` engine for automated hierarchy, cross-platform chronographic traceability, and AI-centric workflows.
 
 [Return to Top](#table-of-contents)
 
