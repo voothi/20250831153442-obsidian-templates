@@ -132,6 +132,25 @@ Highlight both sentences and run `Alt + Q`.
 > [!NOTE]
 > The script uses simple punctuation detection (`.`, `?`, `!`) to perform this split, ensuring your main note stays concise while the details are offloaded to the atomic note.
 
+---
+
+### Case 4: Process Existing Wikilinks
+If your selection contains Wikilinks that point to non-existent files (e.g., `[[Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
+
+---
+
+## Behind the Scenes: Metadata & Safety
+
+### 1. Metadata Inheritance
+Every note created via `_new.md` is "born" with context:
+- **`up` field**: Automatically points back to the note where you ran the script (parent-child relationship).
+- **`tags`**: Inherits all tags from the parent note (both from YAML and the body).
+- **`aliases`**: The primary title is automatically added to the aliases list.
+
+### 2. Safety First
+- **No Overwrites**: If a file with the same ZID-slug already exists, the script will **skip** creation to prevent data loss.
+- **Sanitized Filenames**: Ensures all filenames are lowercase and cross-platform compatible (removing invalid characters like `:`, `_`, or trailing dots).
+
 [Return to Top](#table-of-contents)
 
 ---
