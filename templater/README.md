@@ -22,15 +22,13 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 - **Batch Processing**: Select multiple lines of ZIDs or links and process them all at once.
 
 ### Visual Guide
-````carousel
-![Input: ZID lines](../assets/20260103192406.png)
-<!-- slide -->
-![Result: Linked Note](../assets/20260103192418.png)
-<!-- slide -->
-![Batch Processing Input](../assets/20260103192425.png)
-<!-- slide -->
-![Batch Processing Result](../assets/20260103192431.png)
-````
+| Input ZID Lines | Resulting linked Note |
+| :--- | :--- |
+| ![Input: ZID lines](../assets/20260103192406.png) | ![Result: Linked Note](../assets/20260103192418.png) |
+
+| Batch Input | Batch Result |
+| :--- | :--- |
+| ![Batch Processing Input](../assets/20260103192425.png) | ![Batch Processing Result](../assets/20260103192431.png) |
 
 [Return to Top](#table-of-contents)
 
@@ -44,11 +42,9 @@ Ensures that human-readable titles remain consistent throughout the vault.
 - **Backlink Automation**: Searches the entire vault for links pointing to the current note and updates their display text to match the new H1 title.
 
 ### Visual Guide
-````carousel
-![Alias Update](../assets/20260103192516.png)
-<!-- slide -->
-![Backlink Refresh](../assets/20260103192523.png)
-````
+| Alias Update | Backlink Refresh |
+| :--- | :--- |
+| ![Alias Update](../assets/20260103192516.png) | ![Backlink Refresh](../assets/20260103192523.png) |
 
 [Return to Top](#table-of-contents)
 
@@ -63,11 +59,9 @@ The "Engine" for hierarchical navigation.
 - **Frontmatter Automation**: Updates the `up` field in child notes for breadcrumb-style navigation.
 
 ### Visual Guide
-````carousel
-![MOC Scanning](../assets/20260103192534.png)
-<!-- slide -->
-![Frontmatter Update](../assets/20260103192542.png)
-````
+| MOC Scanning | Frontmatter Update |
+| :--- | :--- |
+| ![MOC Scanning](../assets/20260103192534.png) | ![Frontmatter Update](../assets/20260103192542.png) |
 
 [Return to Top](#table-of-contents)
 

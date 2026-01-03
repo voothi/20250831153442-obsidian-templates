@@ -21,11 +21,9 @@ A high-density planning template designed for focus and productivity.
 - **Habit Tracking**: Incorporated slots for health (e.g., meditation, walking) and personal growth.
 
 ### Visual Guide
-````carousel
-![Day Planner Template](../assets/20260103192551.png)
-<!-- slide -->
-![Day Planner in action](../assets/20260103192556.png)
-````
+| Day Planner Template | Day Planner in Action |
+| :--- | :--- |
+| ![Day Planner Template](../assets/20260103192551.png) | ![Day Planner in action](../assets/20260103192556.png) |
 
 [Return to Top](#table-of-contents)
 
