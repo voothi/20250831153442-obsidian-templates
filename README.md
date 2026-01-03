@@ -11,6 +11,7 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
   - [Templater Scripts](#templater-scripts)
   - [Daily Note Templates](#daily-note-templates)
 - [The ZID System: Philosophy & Standards](#the-zid-system-philosophy--standards)
+- [Physical Folders: Boundaries of Responsibility](#physical-folders-boundaries-of-responsibility)
 - [Workflow & Features](#workflow--features)
 - [Installation](#installation)
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
@@ -98,6 +99,19 @@ To maintain this portability and flexibility, we follow strict linking rules:
 - **No Paths in Links**: Wikilinks must never contain folder paths (e.g., use `[[20260103210512-note]]`, never `[[folder/subfolder/20260103210512-note]]`).
 - **Internal Maintenance**: Because links are naked, Obsidian's internal cache and our scripts manage the "truth" of the connection even if you move files between folders.
 - **Portability**: This ensures the entire vault can be synced across any OS (Windows, Linux, Android) without breaking links or hitting CVS (Concurrent Versions System) restrictions.
+
+[Return to Top](#table-of-contents)
+
+---
+
+## Physical Folders: Boundaries of Responsibility
+
+In this ecosystem, physical catalogs (folders) serve a specific, non-hierarchical purpose. They are the **watersheds between boundaries of responsibility**.
+
+### Modular Delegation
+- **Administrative Logic**: While ZIDs and MOCs handle the *knowledge* hierarchy, folders handle the *administrative* boundaries.
+- **Access Control**: Folders act like separate "library wings." This structure allows you to share, unshare, or delegate responsibility for an entire catalog (e.g., via Git submodules or separate vault syncing) without breaking the logical connections maintained by ZIDs.
+- **Granularity**: You can provide separate access to specific project folders or "unshare" private research catalogs, ensuring that the "Flat Base" remains structurally simple but administratively robust.
 
 [Return to Top](#table-of-contents)
 
