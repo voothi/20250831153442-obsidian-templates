@@ -61,7 +61,7 @@ This repository contains advanced [Templater](https://github.com/SilentVoid13/Te
 ### Templater Scripts
 
 #### _new.md
-[File Link](templater/_new.md)
+[_new.md](templater/_new.md)
 
 The primary script for creating new notes. 
 - **Features**: 
@@ -74,7 +74,7 @@ The primary script for creating new notes.
 > **Planned Enhancement**: Future versions will improve handling of nested ZID entries within sentences, automatically splitting them into new lines and processing them recursively.
 
 #### _update.md
-[File Link](templater/_update.md)
+[_update.md](templater/_update.md)
 
 Maintains consistency across your vault.
 - **Features**:
@@ -82,7 +82,7 @@ Maintains consistency across your vault.
   - Automatically searches for and updates backlinks in other files to reflect the new title, ensuring display text stays in sync.
 
 #### _moc.md
-[File Link](templater/_moc.md)
+[_moc.md](templater/_moc.md)
 
 The engine for your Map of Content.
 - **Features**:
@@ -93,7 +93,7 @@ The engine for your Map of Content.
 ### Daily Note Templates
 
 #### day-planner.md
-[File Link](daily-note-calendar/day-planner.md)
+[day-planner.md](daily-note-calendar/day-planner.md)
 
 A structured template for daily planning.
 - **Features**:
