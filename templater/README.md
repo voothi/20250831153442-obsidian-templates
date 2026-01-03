@@ -68,30 +68,69 @@ The "Engine" for hierarchical navigation.
 
 ---
 
+[Return to Top](#table-of-contents)
+
+---
+
 ## Usage Examples: `_new.md`
 
 ### Case 1: Convert Raw ZID Lines to Linked Notes
-Turn a selection of ideas/tasks starting with 14-digit timestamps (ZIDs) into clean Wikilinks while splitting the content.
+Turn a selection of lines starting with 14-digit timestamps (ZIDs) into clean Wikilinks.
 
 **Input (Selection):**
 ```text
-20251226135208 Это первое предложение первой записи. Второе предложение первой записи, которое должно попасть внутрь файла.
+20251226135208 This is the first sentence of the first entry. This is the second sentence which moves inside.
 
-- [ ] 20251226135257 Это первое предложение второй записи. Второе предложение.
+- [ ] 20251226135257 This is the first sentence of the second entry.
 ```
 
 **Output (Updated Selection):**
 ```text
-[[20251226135208-это-первое-предложение-первой-записи|Это первое предложение первой записи.]]
+[[20251226135208-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
 
-- [ ] [[20251226135257-это-первое-предложение-второй-записи|Это первое предложение второй записи.]]
+- [ ] [[20251226135257-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
 ```
 
 **What happens:**
+- **Sanitization**: Filenames/Wikilinks are automatically sanitized (handling spaces, special characters, and umlauts) while preserving the **original input language**.
 - **Title Extraction**: The first sentence (up to the first `.`) becomes the Wikilink label.
-- **Content Migration**: All subsequent sentences are automatically moved into the new note's description.
-- **Structure**: Indentation and list markers (`- [ ]`) are preserved.
-- **Batching**: Processes all selected ZID lines in one click.
+- **Content Migration**: The second sentence ("This is the second sentence...") is moved to the new note's description.
+- **Batching**: Processes all selected ZID lines simultaneously while preserving list markers.
+
+---
+
+### Case 2: In-line Selection (New Note from Text)
+Highlight a phrase within an existing sentence to extract it into a new note.
+
+**Action:**
+1. You have a sentence like: "We should discuss the **Kardenwort Ecosystem** later today."
+2. Highlight **Kardenwort Ecosystem**.
+3. Run `Alt + Q`.
+
+**Result:**
+- The text is replaced with: `[[20260103204319-kardenwort-ecosystem|Kardenwort Ecosystem]]`
+- A new file is created with that ZID and title.
+
+---
+
+### Case 3: Selecting Multiple Sentences
+What happens if your selection contains more than one sentence?
+
+**Input (Selection):**
+```text
+The Architecture of Knowledge. It focuses on modularity and ZIDs.
+```
+
+**Action:**
+Highlight both sentences and run `Alt + Q`.
+
+**Result:**
+- **Link Title**: `The Architecture of Knowledge.` (The first sentence).
+- **Slug**: `YYYYMMDDHHMMSS-the-architecture-of-knowledge`
+- **New Note Content**: The second sentence ("It focuses on modularity and ZIDs.") is placed inside the note's **Description** section.
+
+> [!NOTE]
+> The script uses simple punctuation detection (`.`, `?`, `!`) to perform this split, ensuring your main note stays concise while the details are offloaded to the atomic note.
 
 [Return to Top](#table-of-contents)
 
