@@ -10,6 +10,7 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Templates Overview](#templates-overview)
   - [Templater Scripts](#templater-scripts)
   - [Daily Note Templates](#daily-note-templates)
+- [The ZID System: Philosophy & Standards](#the-zid-system-philosophy--standards)
 - [Workflow & Features](#workflow--features)
 - [Installation](#installation)
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
@@ -64,6 +65,30 @@ A structured template for daily planning.
   - Pre-allocated slots for health, work, and personal development.
 
 [Return to Top](#table-of-contents)
+
+---
+
+## The ZID System: Philosophy & Standards
+
+The **Zettelkasten ID (ZID)** is the heartbeat of this ecosystem. It is a strictly formatted 14-digit timestamp (`YYYYMMDDHHMMSS`) used as a permanent, immutable identifier for every atomic unit of knowledge.
+
+### Core Purpose
+1. **Permanent Identity**: The ZID decouples the note's identity from its title. Titles "evolve" as understanding deepens, but the ZID remains an anchor that never breaks links.
+2. **Collision Prevention**: The per-second granularity ensures that no two notes will ever have the same ID, even in a high-volume research environment.
+3. **Semantic Anchoring**: The ZID allows you to see *when* a thought was born relative to others, providing an implicit chronological index to your knowledge base.
+
+### Rules of Engagement
+- **Chronological Integrity**: By default, the ZID reflects the moment of file creation.
+- **Logical Dating**: We do **not** always go forward. If you are processing notes from the past (e.g., digitizing an old analog journal), you should manually set the ZID to match the actual historical date. This preserves the chronological context of the knowledge.
+- **Batching & Sequencing**: When creating multiple related notes at once, it is acceptable to generate sequential ZIDs (manual increment) to cluster them together logically, even if they were technically created in the same minute.
+- **ID Overrides**: The `_new.md` script will prioritize an existing ZID if you provide one. If none is found, it generates a "Current-Time" ZID as a fallback.
+
+### Semantic Connection
+The ZID is not just a name; it's a key. By keeping the ZID in the filename and YAML, external tools and internal scripts can always find the "truth" of the note, even if you rename `20260103205223-old-theory.md` to `20260103205223-proven-law.md`.
+
+[Return to Top](#table-of-contents)
+
+---
 
 ## Workflow & Features
 - **ZID Integration**: Uses 14-digit timestamps (YYYYMMDDHHMMSS) for unique note identification.

@@ -17,7 +17,7 @@ This folder contains the core automation logic for the Zettelkasten workflow. Th
 Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into formatted notes.
 
 ### Features
-- **ZID Parsing**: Recognizes 14-digit timestamps and converts them into note titles.
+- **ZID Parsing**: Recognizes 14-digit timestamps ([ZIDs](../README.md#the-zid-system-philosophy--standards)) and converts them into note titles.
 - **Sanitization**: Automatically handles umlauts (`ö` -> `oe`), spaces, and special characters for cross-platform compatibility.
 - **Description Split**: If enabled, splits the first sentence into the note title and treats the rest as the body description.
 - **Batch Processing**: Select multiple lines of ZIDs or links and process them all at once.
