@@ -52,7 +52,11 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 ---
 
 ## Description
-This repository contains advanced [Templater](https://github.com/SilentVoid13/Templater) scripts and structural templates for Obsidian.md. It focuses on automating note creation, metadata synchronization, and Map of Content (MOC) management using Zettelkasten IDs (ZID). Key capabilities include a `_moc.md` engine for automated hierarchy, cross-platform chronographic traceability, and AI-centric workflows.
+This repository contains advanced [Templater](https://github.com/SilentVoid13/Templater) scripts and structural templates for Obsidian.md. Unlike filesystem-dependent approaches (like Dendron), it implements a "Flat Base" architecture where all notes reside at a single directory level, with logical hierarchy maintained purely through frontmatter and backlinks.
+
+Key capabilities include:
+1.  **Automated Hierarchy**: A `_moc.md` engine that automates many-to-many parent-child relationships.
+3.  **Cross-Platform Traceability**: Enabling synchronization of context between Obsidian, ChatGPT, and external logs using a single timestamp.
 
 [Return to Top](#table-of-contents)
 
