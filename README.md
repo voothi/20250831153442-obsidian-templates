@@ -58,7 +58,6 @@ Key capabilities include:
 1.  **Automated Creation**: The `_new.md` script generates physical files and formatted links from ZIDs or text, including support for **batch processing** (group notes).
 2.  **Seamless Renaming**: The `_update.md` engine synchronizes H1 titles with aliases and automatically refreshes backlinks across the vault.
 3.  **Automated Hierarchy**: A `_moc.md` engine that automates many-to-many parent-child relationships.
-4.  **Cross-Platform Traceability**: Enabling synchronization of context between Obsidian, ChatGPT, and external logs using a single timestamp.
 
 [Return to Top](#table-of-contents)
 
