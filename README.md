@@ -14,6 +14,7 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Installation](#installation)
 - [Plugins Used](#plugins-used)
 - [Syncing](#syncing)
+- [Kardenwort Ecosystem](#kardenwort-ecosystem)
 - [License](#license)
 
 ---
@@ -27,7 +28,7 @@ This repository contains advanced [Templater](https://github.com/SilentVoid13/Te
 
 ### Templater Scripts
 
-#### [`_new.md`](file:///u:/voothi/20250831153442-obsidian-templates/templater/_new.md)
+#### [`_new.md`](templater/_new.md)
 The primary script for creating new notes. 
 - **Features**: 
   - Converts ZID lines to formatted notes with links.
@@ -38,13 +39,13 @@ The primary script for creating new notes.
 > [!TIP]
 > **Planned Enhancement**: Future versions will improve handling of nested ZID entries within sentences, automatically splitting them into new lines and processing them recursively.
 
-#### [`_update.md`](file:///u:/voothi/20250831153442-obsidian-templates/templater/_update.md)
+#### [`_update.md`](templater/_update.md)
 Maintains consistency across your vault.
 - **Features**:
   - Updates the `aliases` in the current file based on the H1 header.
   - Automatically searches for and updates backlinks in other files to reflect the new title, ensuring display text stays in sync.
 
-#### [`_moc.md`](file:///u:/voothi/20250831153442-obsidian-templates/templater/_moc.md)
+#### [`_moc.md`](templater/_moc.md)
 The engine for your Map of Content.
 - **Features**:
   - Globally scans the vault for `# MOC` sections.
@@ -53,7 +54,7 @@ The engine for your Map of Content.
 
 ### Daily Note Templates
 
-#### [`day-planner.md`](file:///u:/voothi/20250831153442-obsidian-templates/daily-note-calendar/day-planner.md)
+#### [`day-planner.md`](daily-note-calendar/day-planner.md)
 A structured template for daily planning.
 - **Features**:
   - Hourly breakdown for tasks and blocks.
@@ -85,6 +86,11 @@ A structured template for daily planning.
 For mobile synchronization via Git, consider using **[GitSync](https://github.com/ViscousPot/GitSync)**.
 
 [Return to Top](#obsidian-templates--workflows)
+
+## Kardenwort Ecosystem
+This project is part of the **[Kardenwort](https://github.com/kardenwort)** environment, designed to create a focused and efficient learning ecosystem.
+
+[Return to Top](#table-of-contents)
 
 ## License
 MIT License. See LICENSE file for details.
