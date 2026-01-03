@@ -9,11 +9,11 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Description](#description)
 - [Templates Overview](#templates-overview)
   - [Templater Scripts](#templater-scripts)
-    - [`_new.md`](#_newmdtemplater_newmd)
-    - [`_update.md`](#_updatemdtemplater_updatemd)
-    - [`_moc.md`](#_mocmdtemplater_mocmd)
+    - [_new.md](#_newmd)
+    - [_update.md](#_updatemd)
+    - [_moc.md](#_mocmd)
   - [Daily Note Templates](#daily-note-templates)
-    - [`day-planner.md`](#day-plannermddaily-note-calendarday-plannermd)
+    - [day-planner.md](#day-plannermd)
 - [The ZID System: Philosophy & Standards](#the-zid-system-philosophy--standards)
 - [Physical Folders: Boundaries of Responsibility](#physical-folders-boundaries-of-responsibility)
 - [Workflow & Features](#workflow--features)
@@ -39,7 +39,9 @@ This repository contains advanced [Templater](https://github.com/SilentVoid13/Te
 
 ### Templater Scripts
 
-#### [`_new.md`](templater/_new.md)
+#### _new.md
+[File Link](templater/_new.md)
+
 The primary script for creating new notes. 
 - **Features**: 
   - Converts ZID lines to formatted notes with links.
@@ -50,13 +52,17 @@ The primary script for creating new notes.
 > [!TIP]
 > **Planned Enhancement**: Future versions will improve handling of nested ZID entries within sentences, automatically splitting them into new lines and processing them recursively.
 
-#### [`_update.md`](templater/_update.md)
+#### _update.md
+[File Link](templater/_update.md)
+
 Maintains consistency across your vault.
 - **Features**:
   - Updates the `aliases` in the current file based on the H1 header.
   - Automatically searches for and updates backlinks in other files to reflect the new title, ensuring display text stays in sync.
 
-#### [`_moc.md`](templater/_moc.md)
+#### _moc.md
+[File Link](templater/_moc.md)
+
 The engine for your Map of Content.
 - **Features**:
   - Globally scans the vault for `# MOC` sections.
@@ -65,7 +71,9 @@ The engine for your Map of Content.
 
 ### Daily Note Templates
 
-#### [`day-planner.md`](daily-note-calendar/day-planner.md)
+#### day-planner.md
+[File Link](daily-note-calendar/day-planner.md)
+
 A structured template for daily planning.
 - **Features**:
   - Hourly breakdown for tasks and blocks.
