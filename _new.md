@@ -1,6 +1,11 @@
 <%*
-// Helper function to sanitize file names, inspired by the python script.
-// Replaces special characters (like umlauts) and formats the name.
+// Configuration: Set to true to split the first sentence into the title/link 
+// and the rest into the Description section.
+const SPLIT_DESCRIPTION = true; 
+
+// --- HELPER FUNCTIONS ---
+
+// 1. Sanitize File Names
 function sanitizeName(inputString) {
     const replacements = {
         'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss',
@@ -14,75 +19,39 @@ function sanitizeName(inputString) {
     }
     
     // Remove characters that are not letters, numbers, spaces, or hyphens.
-    // Keeps latin and cyrillic characters.
     let cleanedForSplitting = processedString.replace(/[^a-zA-Zа-яА-ЯёЁ0-9\s-]/g, '');
 
     const words = cleanedForSplitting.trim().split(/\s+/);
-    const firstWords = words.slice(0, 6); // Use up to 6 words
+    const firstWords = words.slice(0, 4); // Use up to 4 words
     let finalName = firstWords.join('-');
 
-    // NEW: Clean up any trailing hyphens that might result from punctuation at the end.
+    // Clean up trailing hyphens
     finalName = finalName.replace(/-+$/, '');
 
     return finalName.toLowerCase();
 }
 
-// 1. Get the active file object (our parent)
-const parentFile = app.workspace.getActiveFile();
-if (!parentFile) { new Notice("No active file to inherit from.", 5000); return; }
+// 2. Create Note File (Centralized Logic)
+async function createNoteFile(params) {
+    const { 
+        filename, 
+        taskName, 
+        description, 
+        parentFolderPath, 
+        parentTitle, 
+        tagsYamlBlock 
+    } = params;
 
-const parentFolderPath = parentFile.parent.path;
-const selection = tp.file.selection();
-if (!selection) { new Notice("Nothing selected. Creation cancelled.", 3000); return; }
+    const filePath = parentFolderPath === '/' ? `${filename}.md` : `${parentFolderPath}/${filename}.md`;
 
-const linkRegex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
-const matches = [...selection.matchAll(linkRegex)];
+    // Check if file exists. If yes, return false (did not create).
+    if (await app.vault.adapter.exists(filePath)) { 
+        return false; 
+    }
 
-const parentMetadata = app.metadataCache.getFileCache(parentFile);
-const parentTitle = parentFile.basename;
-const parentArea = parentMetadata?.frontmatter?.area || "";
-let projectValue;
-const parentProjectRaw = parentMetadata?.frontmatter?.project;
-if (parentProjectRaw) {
-    const cleanFileName = String(parentProjectRaw).replace(/\[|\]|"/g, '');
-    projectValue = `[[${cleanFileName}]]`;
-} else {
-    projectValue = `[[${parentTitle}]]`;
-}
+    const aliasesYamlBlock = `\n  - ${taskName}`;
 
-let frontmatterTags = [];
-const tagsFromFM = parentMetadata?.frontmatter?.tags;
-if (tagsFromFM) {
-    if (Array.isArray(tagsFromFM)) { frontmatterTags = tagsFromFM; } 
-    else { frontmatterTags = String(tagsFromFM).split(',').map(t => t.trim()); }
-}
-frontmatterTags = frontmatterTags.filter(Boolean);
-const bodyTags = parentMetadata?.tags?.map(t => t.tag.substring(1)) || [];
-const allUniqueTags = [...new Set([...frontmatterTags, ...bodyTags])];
-let tagsYamlBlock = "[]"; 
-if (allUniqueTags.length > 0) {
-    tagsYamlBlock = "\n  - " + allUniqueTags.join("\n  - ");
-}
-
-
-if (matches.length > 0) {
-    // --- MODE 1: Links found, start batch creation ---
-    new Notice(`Found ${matches.length} links. Processing...`, 3000);
-    let filesCreatedCount = 0;
-
-    for (const match of matches) {
-        const originalLinkText = match[1].trim(); 
-        const originalTaskName = match[2] ? match[2].trim() : originalLinkText;
-        
-        // Sanitize the file name using the new function
-        const sanitizedBaseName = sanitizeName(originalLinkText);
-        const filePath = parentFolderPath === '/' ? `${sanitizedBaseName}.md` : `${parentFolderPath}/${sanitizedBaseName}.md`;
-
-        if (await app.vault.adapter.exists(filePath)) { continue; }
-        
-        const aliasesYamlBlock = `\n  - ${originalTaskName}`;
-
-        const newFileContent = `---
+    const newFileContent = `---
 aliases: ${aliasesYamlBlock}
 up: "[[${parentTitle}]]"
 type: 
@@ -98,48 +67,197 @@ created: ${tp.date.now("YYYY-MM-DD")}
 due: 
 ---
 
-# ${originalTaskName}
+# ${taskName}
 
-## Description.
+## Description
+
+${description || ""}
 
 ## MOC.
 
-## Notes.
+
+
+## Notes
+
+
 `;
 
-        await app.vault.create(filePath, newFileContent);
-        filesCreatedCount++;
+    await app.vault.create(filePath, newFileContent);
+    return true; // Created successfully
+}
+
+// --- MAIN SCRIPT ---
+
+const parentFile = app.workspace.getActiveFile();
+if (!parentFile) { new Notice("No active file to inherit from.", 5000); return; }
+
+const parentFolderPath = parentFile.parent.path;
+const selection = tp.file.selection();
+if (!selection) { new Notice("Nothing selected. Creation cancelled.", 3000); return; }
+
+// Metadata & Tags Preparation
+const parentMetadata = app.metadataCache.getFileCache(parentFile);
+const parentTitle = parentFile.basename;
+let frontmatterTags = [];
+const tagsFromFM = parentMetadata?.frontmatter?.tags;
+if (tagsFromFM) {
+    if (Array.isArray(tagsFromFM)) { frontmatterTags = tagsFromFM; } 
+    else { frontmatterTags = String(tagsFromFM).split(',').map(t => t.trim()); }
+}
+frontmatterTags = frontmatterTags.filter(Boolean);
+const bodyTags = parentMetadata?.tags?.map(t => t.tag.substring(1)) || [];
+const allUniqueTags = [...new Set([...frontmatterTags, ...bodyTags])];
+let tagsYamlBlock = "[]"; 
+if (allUniqueTags.length > 0) {
+    tagsYamlBlock = "\n  - " + allUniqueTags.join("\n  - ");
+}
+
+// Regex Definitions
+const linkRegex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+const zidLineRegex = /^(\s*(?:(?:[-*+]|\d+\.)(?:\s+\[[ xX]\])?\s+)?)(\d{14})\s+(.*)$/;
+
+const lines = selection.split(/\r?\n/);
+const hasZidLines = lines.some(line => zidLineRegex.test(line));
+const matches = [...selection.matchAll(linkRegex)];
+
+// --- LOGIC FLOW ---
+
+if (hasZidLines) {
+    // --- MODE 3: Mixed Content / Batch Processing ---
+    // Handles ZID lines (converts & creates) AND existing inactive links (creates).
+    
+    new Notice("ZID lines detected. Processing batch...", 2000);
+    let processedLines = [];
+    let filesCreatedCount = 0;
+
+    for (let line of lines) {
+        const zidMatch = line.match(zidLineRegex);
+        
+        if (zidMatch) {
+            // Case A: It is a ZID line. Convert it.
+            const prefix = zidMatch[1] || ""; 
+            const zid = zidMatch[2];
+            let rawText = zidMatch[3];
+            let cleanTaskName = rawText;
+            let descriptionText = "";
+
+            if (SPLIT_DESCRIPTION) {
+                const splitRegex = /^(.*?[.?!])(?:\s+|$)(.*)$/s;
+                const splitMatch = rawText.match(splitRegex);
+                if (splitMatch) {
+                    cleanTaskName = splitMatch[1].trim();
+                    descriptionText = splitMatch[2] ? splitMatch[2].trim() : "";
+                }
+            }
+
+            const safeTaskName = sanitizeName(cleanTaskName);
+            const fileName = `${zid}-${safeTaskName}`;
+            
+            // Create file for the ZID entry
+            const created = await createNoteFile({
+                filename: fileName,
+                taskName: cleanTaskName,
+                description: descriptionText,
+                parentFolderPath,
+                parentTitle,
+                tagsYamlBlock
+            });
+            if (created) filesCreatedCount++;
+
+            // Replace line with link
+            processedLines.push(`${prefix}[[${fileName}|${cleanTaskName}]]`);
+
+        } else {
+            // Case B: Not a ZID line (Existing link, list item with link, or empty).
+            // Check for inactive links within this line and create files if needed.
+            const lineLinks = [...line.matchAll(linkRegex)];
+            
+            for (const match of lineLinks) {
+                const originalLinkText = match[1].trim(); 
+                const originalTaskName = match[2] ? match[2].trim() : originalLinkText;
+                const sanitizedBaseName = sanitizeName(originalLinkText);
+                
+                // Create file for the existing link (if missing)
+                const created = await createNoteFile({
+                    filename: sanitizedBaseName,
+                    taskName: originalTaskName,
+                    description: "", // No description for existing links
+                    parentFolderPath,
+                    parentTitle,
+                    tagsYamlBlock
+                });
+                if (created) filesCreatedCount++;
+            }
+
+            // Preserve the line exactly as is
+            processedLines.push(line);
+        }
+    }
+
+    new Notice(`Batch complete. Created ${filesCreatedCount} files.`, 3000);
+    tR += processedLines.join("\n");
+
+} else if (matches.length > 0) {
+    // --- MODE 1: Only Links Found (Legacy Batch Creation) ---
+    // Creates files for existing [[links]] but changes nothing in text.
+    
+    new Notice(`Found ${matches.length} links. Creating files...`, 3000);
+    let filesCreatedCount = 0;
+
+    for (const match of matches) {
+        const originalLinkText = match[1].trim(); 
+        const originalTaskName = match[2] ? match[2].trim() : originalLinkText;
+        const sanitizedBaseName = sanitizeName(originalLinkText);
+
+        const created = await createNoteFile({
+            filename: sanitizedBaseName,
+            taskName: originalTaskName,
+            description: "",
+            parentFolderPath,
+            parentTitle,
+            tagsYamlBlock
+        });
+        if (created) filesCreatedCount++;
     }
 
     new Notice(`Processing complete. New files created: ${filesCreatedCount}.`, 5000);
     tR += selection; 
 
 } else {
-    // --- MODE 2: No links found, process plain text ---
+    // --- MODE 2: Single Plain Text Entry ---
     
-    const originalTaskName = selection.trim();
+    const originalText = selection.trim();
     let fileName;
-    let cleanTaskName = originalTaskName;
+    let cleanTaskName = originalText;
+    let descriptionText = "";
 
-    const zidRegex = /^(\d{14})\s+(.*)$/s;
-    const zidMatch = originalTaskName.match(zidRegex);
+    const zidMatch = originalText.match(/^(\d{14})\s+(.*)$/s);
+    let existingZid = null;
 
     if (zidMatch) {
-        // CASE A: ZID found.
-        new Notice("ZID detected. Using it.", 2000);
-        const existingZid = zidMatch[1];
-        const textAfterZid = zidMatch[2].trim();
-        cleanTaskName = textAfterZid;
-        
-        const safeTaskName = sanitizeName(textAfterZid);
-        fileName = `${existingZid}-${safeTaskName}`;
+        existingZid = zidMatch[1];
+        cleanTaskName = zidMatch[2].trim();
+    } 
 
+    if (SPLIT_DESCRIPTION) {
+        const splitRegex = /^(.*?[.?!])(?:\s+|$)(.*)$/s;
+        const splitMatch = cleanTaskName.match(splitRegex);
+
+        if (splitMatch) {
+            cleanTaskName = splitMatch[1].trim(); 
+            descriptionText = splitMatch[2] ? splitMatch[2].trim() : ""; 
+        }
+    }
+
+    const safeTaskName = sanitizeName(cleanTaskName);
+    
+    if (existingZid) {
+        fileName = `${existingZid}-${safeTaskName}`;
     } else {
-        // CASE B: ZID not found.
-        const safeTaskName = sanitizeName(originalTaskName);
         fileName = `${tp.date.now("YYYYMMDDHHmmss")}-${safeTaskName}`;
     }
 
+    // Note: We don't use the helper here because we need the 'newFile' object to open it.
     const filePath = parentFolderPath === '/' ? `${fileName}.md` : `${parentFolderPath}/${fileName}.md`;
     
     if (await app.vault.adapter.exists(filePath)) {
@@ -167,11 +285,17 @@ due:
 
 # ${cleanTaskName}
 
-## Description.
+## Description
+
+${descriptionText}
 
 ## MOC.
 
-## Notes.
+
+
+## Notes
+
+
 `;
 
     const newFile = await app.vault.create(filePath, newFileContent);
