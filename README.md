@@ -1,7 +1,8 @@
-# Шаблоны для Templater в Obsidian
+# Templates for Templater in Obsidian
 
-## Основные
+## Basic
 
 - _moc.md
 - _new.md
+- _update.md
 - day-planner.md
