@@ -27,8 +27,6 @@ A high-density planning template designed for focus and productivity.
 
 [Return to Top](#table-of-contents)
 
----
-
 ## Calendar Integration
 The **Daily Note Calendar** plugin provides the primary interface for navigating your journal.
 
@@ -43,8 +41,6 @@ The **Daily Note Calendar** plugin provides the primary interface for navigating
 ![Calendar Plugin Settings](../assets/20260103192356.png)
 
 [Return to Top](#table-of-contents)
-
----
 
 ## Healthy Habits & Workflow
 The template encourages a disciplined daily routine:
