@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/voothi/20250831153442-obsidian-templates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A **ZID-based methodology** expressed through a curated collection of Obsidian templates and scripts. It implements a **ownership-partitioned** "Flat Base" architecture that decouples the **logical graph of knowledge** from the **physical hierarchy of storage** (filesystem), enabling many-to-many knowledge structures and seamless AI collaboration.
+A **ZID-based methodology** expressed through a curated collection of Obsidian templates and scripts. It implements a **ownership-partitioned** "Flat Base" architecture that decouples the **logical graph of knowledge** (MOCs & links) from the **physical hierarchy of storage** (filesystem), enabling many-to-many knowledge structures and seamless AI collaboration.
 
 ## Table of Contents
 - [Description](#description)
