@@ -14,6 +14,8 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Installation](#installation)
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
 - [Syncing](#syncing)
+- [Release Notes](#release-notes)
+- [RFCs](#rfcs)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
 - [License](#license)
 
@@ -109,6 +111,14 @@ Highly recommended for version control and syncing. ([obsidian://show-plugin?id=
 
 ## Syncing
 For mobile synchronization via Git, consider using **[GitSync](https://github.com/ViscousPot/GitSync)**.
+
+[Return to Top](#table-of-contents)
+
+## Release Notes
+Detailed changes for each version can be found in [release-notes.md](release-notes.md).
+
+## RFCs
+Technical decisions and implementation details are documented in the [docs/rfcs/](docs/rfcs/) directory.
 
 [Return to Top](#table-of-contents)
 
