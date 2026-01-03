@@ -49,7 +49,9 @@ Ensures that human-readable titles remain consistent throughout the vault.
 [Return to Top](#table-of-contents)
 
 ## `_moc.md`: Map of Content
-#### [`_moc.md`](_moc.md)
+#### _moc.md
+[File Link](_moc.md)
+
 The structural engine of the vault. It scans for specific headers to build and maintain the logical hierarchy of your notes.
 
 ### Features
