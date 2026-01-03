@@ -20,6 +20,7 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Installation](#installation)
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
 - [Syncing](#syncing)
+- [Browser Integration: Wikilinks on GitHub](#browser-integration-wikilinks-on-github)
 - [Release Notes](#release-notes)
 - [RFCs](#rfcs)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
@@ -184,6 +185,11 @@ Highly recommended for version control and syncing. ([obsidian://show-plugin?id=
 
 ## Syncing
 For mobile synchronization via Git, consider using **[GitSync](https://github.com/ViscousPot/GitSync)**.
+
+[Return to Top](#table-of-contents)
+
+## Browser Integration: Wikilinks on GitHub
+If you host your vault repository on **GitHub.com**, you can enable native Wikilink navigation in your browser using the **[Wikilink Helper](https://github.com/voothi/20251231141931-wikilink-helper)** Chrome extension. This tool automatically converts standard `[[Wikilink]]` syntax into clickable links while browsing your files on GitHub, allowing you to traverse your knowledge base without leaving the browser.
 
 [Return to Top](#table-of-contents)
 
