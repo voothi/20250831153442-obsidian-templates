@@ -18,8 +18,8 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Syncing](#syncing)
 - [Release Notes](#release-notes)
 - [RFCs](#rfcs)
-- [Current Limitations & Performance](#current-limitations--performance)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
+- [Current Limitations & Performance](#current-limitations--performance)
 - [License](#license)
 
 [Return to Top](#table-of-contents)
