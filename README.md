@@ -1,13 +1,29 @@
-# Templates for Templater in Obsidian
+# Community Plugins in Obsidian used
 
-## Basic
+## Templater
+
+### Templates
 
 - _moc.md
 - _new.md
 - _update.md
 
+## Daily note calendar
+
+### Templates for 
+
 - day-planner.md
 
-# Plugins used
+## Git
+
+obsidian://show-plugin?id=obsidian-git
+https://github.com/Vinzent03/obsidian-git
+
+
+## To synchronize with your phone via Git
+
+https://github.com/ViscousPot/GitSync
+
+
 
 
