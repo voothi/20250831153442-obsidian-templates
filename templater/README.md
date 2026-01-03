@@ -79,23 +79,29 @@ This system provides extreme **flexibility**. Unlike a rigid folder tree, a sing
 - **How it works**: If you list `[[ZID-Atomic-Note]]` under three different MOC sections in three separate files, the `_moc.md` script will aggregate all three parents into the `up` field of that note's frontmatter.
 - **The Result**: A truly networked knowledge base where nodes participate in several logical chains simultaneously.
 
-### 3. Usage & Syntax
-To map your structure, use indented lists under an MOC header:
+### 3. Real-World Examples: Core MOCs
+The vault's entry points are powered by this engine. See how the root connects to the main structure:
 
-```markdown
-## Projects. MOC
-- [[ZID-Project-A]]
-  - [[ZID-Task-1]]
-  - [[ZID-Task-2]]
-- [[ZID-Project-B]]
-  - [[ZID-Task-1]] (Note: Task 1 participates in both Projects!)
-```
+- **[root.md](../docs/root.md)**: The "Zero-Level" entry point.
+- **[Structure MOC](../docs/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
 
-### 4. Integration with `_new.md`
-`_moc.md` and `_new.md` work in a continuous feedback loop:
-1. **Creation**: You use `_new.md` to create an atomic note. It initially points back to the note where it was created.
-2. **Structuring**: You then place that note's link into one or more MOC sections.
-3. **Synchronization**: Running `_moc.md` (via `Alt + A`) globally updates the `up` field, finalizing the note's position in your structural hierarchy.
+When you run `_moc.md`, every child listed in the Structure MOC automatically receives `up: "[[20220207182435-structure-moc]]"` in its frontmatter.
+
+### 4. Tree Formation: Vertical & Horizontal Chains
+The engine builds the logical tree using two rules:
+1. **Vertical (Indentation)**: Indented items are children of the line above them.
+2. **Horizontal (Same-Line)**: Multiple links on a single line form a chain from left-to-right (e.g., `- [[Parent]] [[Child]] [[Grandchild]]`).
+
+### 5. Technical Limitations & Deletion Logic
+Understanding how the sync handles changes is critical for vault maintenance:
+
+#### What happens if I delete a node?
+- **From an MOC**: If you remove a link from all MOC sections, the engine identifies it as an **Orphan**. On the next sync, it will surgically **clear** the `up` field from that note's YAML.
+- **From the Filesystem**: If the file itself is deleted, the engine simply skips it. Any underlying children in the MOC will "adopt" the next available parent in the stack.
+
+#### Synchronization Hooks
+- **Global Scope**: `_moc.md` scans the *entire* vault. It is a "heavy" operation designed for periodic structural alignment.
+- **No Residual Data**: Because the script maintains a full map of the vault, it is the only way to ensure "deleted" relationships don't linger in your metadata.
 
 [Return to Top](#table-of-contents)
 
