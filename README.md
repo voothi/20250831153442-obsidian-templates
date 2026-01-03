@@ -86,6 +86,19 @@ The **Zettelkasten ID (ZID)** is the heartbeat of this ecosystem. It is a strict
 ### Semantic Connection
 The ZID is not just a name; it's a key. By keeping the ZID in the filename and YAML, external tools and internal scripts can always find the "truth" of the note, even if you rename `20260103205223-old-theory.md` to `20260103205223-proven-law.md`.
 
+### Technical Advantages: The "Flat Base" Solution
+The ZID system specifically solves the **"Dendron Problem"**—where hierarchical knowledge is hard-coded into physical file paths and names. 
+
+- **Breaking the Filesystem Chain**: Unlike hierarchical systems that rigidly nail your structure to the OS filesystem, this system uses a **flat directory structure**. 
+- **Escape OS Limitations**: By decoupling hierarchy from paths, you avoid issues with maximum path lengths and invalid filename characters that often break Git synchronization on Android and other mobile platforms.
+- **Outliner-style Nesting**: The logical structure is hardwired into **Frontmatter** and **Backlinks**, maintained by the `_moc.md` engine. You can achieve infinite nesting depths (similar to Logseq or Workflowy) without ever deep-nesting a folder on your drive.
+
+### Wikilink Standards
+To maintain this portability and flexibility, we follow strict linking rules:
+- **No Paths in Links**: Wikilinks must never contain folder paths (e.g., use `[[20260103210512-note]]`, never `[[folder/subfolder/20260103210512-note]]`).
+- **Internal Maintenance**: Because links are naked, Obsidian's internal cache and our scripts manage the "truth" of the connection even if you move files between folders.
+- **Portability**: This ensures the entire vault can be synced across any OS (Windows, Linux, Android) without breaking links or hitting CVS (Concurrent Versions System) restrictions.
+
 [Return to Top](#table-of-contents)
 
 ---
