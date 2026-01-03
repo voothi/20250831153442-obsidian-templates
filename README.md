@@ -1,3 +1,5 @@
+# Repository for sharing your templates, processes, list of Obsidian plugins
+
 # Community Plugins in Obsidian used
 
 ## Templater
