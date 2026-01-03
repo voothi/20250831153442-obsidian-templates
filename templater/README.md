@@ -157,6 +157,31 @@ Highlight both sentences and run `Alt + Q`.
 ### Case 4: Process Existing Wikilinks
 If your selection contains Wikilinks that point to non-existent files (e.g., `[[Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
 
+### Case 5: Multi-Language Knowledge Base (ZID Pivot)
+How do you maintain the same thought across several languages (Russian, English, German, Ukrainian)? You anchor them with the same **ZID**, using the slug to define the language.
+
+**Input (Four translations, same ZID):**
+```text
+20260103220434 Создать кнопку "Сделай всё хорошо" для пользователя системы.
+20260103220434 Create a “Do everything well” button for the system user.
+20260103220434 Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.
+20260103220434 Створіть кнопку «Зробити все добре» для користувача системи.
+```
+
+**Output after `Alt + Q` (Four unique files, one indexable ID):**
+```text
+[[20260103220434-sozdat-knopku-sdelaj-vse-horosho-dlya-polzovatelya-sistemy|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
+[[20260103220434-create-a-do-everything-well-button-for-the-system-user|Create a “Do everything well” button for the system user.]]
+[[20260103220434-erstellen-sie-einen-alles-gut-machen-button-fur-den-systembenutzer|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
+[[20260103220434-stvorit-knopku-zrobiti-vse-dobre-dlya-koristuvacha-sistemi|Створіть кнопку «Зробити все добре» для користувача системи.]]
+```
+
+**Why this works:**
+- **ZID as Anchor**: Searching for `20260103220434` will immediately list all available translations in your vault.
+- **Independence**: Each file is its own atomic unit with its own descriptive slug, yet they are logically tied together forever.
+
+---
+
 ## Behind the Scenes: Metadata & Safety
 
 ### 1. Metadata Inheritance
