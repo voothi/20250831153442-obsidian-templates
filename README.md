@@ -110,6 +110,23 @@ The ZID ecosystem extends far beyond Obsidian. It serves as a **Universal Synchr
 - **Traceability & Context Recovery**: Because ZIDs are unique timestamps, you can reconstruct the exact sequence of actions across different platforms. Even years later, you can find the "contextual twin" of an Obsidian note in your AI chat history or terminal logs by simply searching for the ZID.
 - **AI Context Steering**: You can ask an AI to "anchor" its reasoning to a specific ZID or series of ZIDs, ensuring high-precision context retrieval when resurrecting complex logical threads.
 
+#### Practical Example: AI Context Anchoring
+Imagine a long development session in ChatGPT:
+
+```markdown
+20260103231102
+> User: I need you to rewrite this application in Rust. Fix all bugs, 
+> but ignore binary size for now.
+
+... (after 3 hours of complex coding) ...
+
+20260103231352
+> User: Nothing works. Let's go back to 20260103231102 and try a 
+> different approach. Also, generate a report of exactly what 
+> we changed between these two markers so I can log it in Obsidian.
+```
+This ZID-anchored approach allows the AI (and the human) to treat the conversation as a series of **versioned states**, making it trivial to extract precise work logs for your permanent knowledge base.
+
 ### Technical Advantages: The "Flat Base" Solution
 The ZID system specifically solves the **"Dendron Problem"**—where hierarchical knowledge is hard-coded into physical file paths and names. (See [Dendron](https://github.com/dendronhq/dendron))
 
