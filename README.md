@@ -95,6 +95,12 @@ The ZID system specifically solves the **"Dendron Problem"**—where hierarchica
 - **Escape OS Limitations**: By decoupling hierarchy from paths, you avoid issues with maximum path lengths and invalid filename characters that often break Git synchronization on Android and other mobile platforms.
 - **Outliner-style Nesting**: The logical structure is hardwired into **Frontmatter** and **Backlinks**, maintained by the `_moc.md` engine. You can achieve infinite nesting depths (similar to Logseq or Workflowy) without ever deep-nesting a folder on your drive.
 
+### Comparison: Beyond the Logseq Block Model
+While Logseq and similar outliners offer great flexibility, the ZID-based atomic approach provides several critical advantages:
+- **Large Content Handling**: Logseq's "one large file with blocks" model becomes unwieldy when dealing with large specific texts like server logs, extensive program code, or long-form writing. Our system treats these as atomic files, making them easier to manage and search.
+- **Cross-Editor Compatibility**: Logseq uses proprietary block-level numbering that is often incompatible with other standard Markdown editors. Our system relies on standard **Obsidian/CommonMark Wikilinks**, ensuring your knowledge base remains perfectly readable and editable in **VSCode**, **Dendron**, and any other standard text editor.
+- **Atomic Independence**: In Logseq, deep nesting is bound to a single page's structure. In this system, every "block" can be its own standalone note with its own metadata, while still participating in complex hierarchical chains.
+
 ### Wikilink Standards
 To maintain this portability and flexibility, we follow strict linking rules:
 - **No Paths in Links**: Wikilinks must never contain folder paths (e.g., use `[[20260103210512-note]]`, never `[[folder/subfolder/20260103210512-note]]`).
