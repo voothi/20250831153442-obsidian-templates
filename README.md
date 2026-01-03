@@ -21,6 +21,7 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
 - [Syncing](#syncing)
 - [Browser Integration: Wikilinks on GitHub](#browser-integration-wikilinks-on-github)
+- [AI Workflow: Hypotheses & Prompt Engineering](#ai-workflow-hypotheses--prompt-engineering)
 - [Migration from Dendron.so](#migration-from-dendronso)
 - [Release Notes](#release-notes)
 - [RFCs](#rfcs)
@@ -191,6 +192,23 @@ For mobile synchronization via Git, consider using **[GitSync](https://github.co
 
 ## Browser Integration: Wikilinks on GitHub
 If you host your vault repository on **GitHub.com**, you can enable native Wikilink navigation in your browser using the **[Wikilink Helper](https://github.com/voothi/20251231141931-wikilink-helper)** Chrome extension. This tool automatically converts standard `[[Wikilink]]` syntax into clickable links while browsing your files on GitHub, allowing you to traverse your knowledge base without leaving the browser.
+
+[Return to Top](#table-of-contents)
+
+## AI Workflow: Hypotheses & Prompt Engineering
+The multi-node architecture is a powerful engine for advanced collaboration with AI (e.g., ChatGPT, Gemini). It enables a high-velocity cycle of hypothesis testing and result comparison:
+
+### 1. Hypothesis Branching
+By using the **ZID Pivot** (sharing the same ZID prefix across multiple notes), you can branch your thoughts. Each branch represents a separate hypothesis or a different AI response, allowing you to compare strings of logic side-by-side without them merging into a single, confusing file.
+
+### 2. Prompt Versioning & Multi-Language Engineering
+You can maintain your prompts in several languages (RU, EN, DE, etc.) for the same conceptual goal:
+- `20260103220434-ru-prompt.md`
+- `20260103220434-en-prompt.md`
+Searching for the ZID `20260103220434` immediately gathers all language versions of that prompt, making it easy to iterate and improve instructions across different linguistic contexts.
+
+### 3. Recording Results & Iterative Refinement
+Each AI interaction is recorded as an atomic node. You can link these results back to your original hypotheses via MOCs, building a transparent audit trail of how your project evolved from an initial prompt to a finalized result.
 
 [Return to Top](#table-of-contents)
 
