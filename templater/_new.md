@@ -2,6 +2,7 @@
 // Configuration: Set to true to split the first sentence into the title/link 
 // and the rest into the Description section.
 const SPLIT_DESCRIPTION = true; 
+const SLUG_WORD_COUNT = 4; // Number of words to keep in the filename slug.
 
 // --- HELPER FUNCTIONS ---
 
@@ -22,7 +23,7 @@ function sanitizeName(inputString) {
     let cleanedForSplitting = processedString.replace(/[^a-zA-Zа-яА-ЯёЁ0-9\s-]/g, '');
 
     const words = cleanedForSplitting.trim().split(/\s+/);
-    const firstWords = words.slice(0, 4); // Use up to 4 words
+    const firstWords = words.slice(0, SLUG_WORD_COUNT); 
     let finalName = firstWords.join('-');
 
     // Clean up trailing hyphens

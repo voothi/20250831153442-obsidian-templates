@@ -20,7 +20,7 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 - **ZID Parsing**: Recognizes 14-digit timestamps ([ZIDs](../README.md#the-zid-system-philosophy--standards)) and converts them into note titles.
 - **Sanitization**: Automatically handles umlauts (`ö` -> `oe`), spaces, and special characters for cross-platform compatibility.
 - **Description Split**: If enabled, splits the first sentence into the note title and treats the rest as the body description.
-- **Enforced Slug Length**: Automatically limits the filename slug to the **first 4 words** of the title to keep the vault clean and OS-compatible.
+- **Enforced Slug Length**: Automatically limits the filename slug to a specific number of words (Default: **4**) to keep the vault clean. This is configurable via the `SLUG_WORD_COUNT` setting in the script header.
 - **Batch Processing**: Select multiple lines of ZIDs or links and process them all at once.
 
 ### Visual Guide
