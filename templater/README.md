@@ -78,7 +78,7 @@ The script triggers on headers that follow a specific pattern: `# MOC.` or `## [
 > **The Dot Matters**: The script's logic is strictly keyed to identify the string `MOC.` (with the period). This prevents it from accidentally processing random text while allowing for descriptive headers like `## Biology Research. MOC`.
 
 ### 2. Logical Multi-Node Chains (Many-to-Many)
-This system implements the **[Workflowy](https://workflowy.com/) outliner approach**, but applies it to **atomic flat files** rather than proprietary blocks. You maintain a flat storage of independent notes, while the MOC files describe the "map of connections" between them.
+This system implements the **[Workflowy](https://workflowy.com/) outliner approach**, but applies it to **atomic flat files** rather than **nested bullet lists**. You maintain a flat storage of independent notes, while the MOC files describe the "map of connections" between them.
 
 This provides extreme **flexibility**. Unlike a rigid folder tree, a single note can belong to multiple branches of your knowledge base.
 
