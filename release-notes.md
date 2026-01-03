@@ -1,6 +1,6 @@
 # Release Notes
 
-## [v1.0.0] - 2026-01-03
+## v1.0.0 - 2026-01-03
 
 ### Added
 - **Comprehensive Documentation Overhaul**:

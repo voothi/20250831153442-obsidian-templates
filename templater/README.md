@@ -5,15 +5,17 @@
 This folder contains the core automation logic for the Zettelkasten workflow. These scripts manage note creation, name sanitization, and hierarchical synchronization.
 
 ## Table of Contents
-- [`_new.md`: Smart Note Creation](#_newmd-smart-note-creation)
-- [`_update.md`: Title & Backlink Sync](#_updatemd-title--backlink-sync)
-- [`_moc.md`: Map of Content synchronization](#_mocmd-map-of-content-synchronization)
-- [Usage Examples: `_new.md`](#usage-examples-_newmd)
+- [Smart Note Creation](#smart-note-creation)
+- [Title & Backlink Sync](#title--backlink-sync)
+- [Map of Content Synchronization](#map-of-content-synchronization)
+- [Usage Examples](#usage-examples)
 - [Installation & Hotkeys](#installation--hotkeys)
 
 ---
 
-## `_new.md`: Smart Note Creation
+## Smart Note Creation
+[_new.md](_new.md)
+
 Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into formatted notes.
 
 ### Features
@@ -34,7 +36,8 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 
 [Return to Top](#table-of-contents)
 
-## `_update.md`: Title & Backlink Sync
+## Title & Backlink Sync
+ [_update.md](_update.md)
 Ensures that human-readable titles remain consistent throughout the vault.
 
 ### Features
@@ -48,9 +51,8 @@ Ensures that human-readable titles remain consistent throughout the vault.
 
 [Return to Top](#table-of-contents)
 
-## `_moc.md`: Map of Content
-#### _moc.md
-[File Link](_moc.md)
+## Map of Content Synchronization
+[`_moc.md`](_moc.md)
 
 The structural engine of the vault. It scans for specific headers to build and maintain the logical hierarchy of your notes.
 
@@ -107,7 +109,7 @@ Understanding how the sync handles changes is critical for vault maintenance:
 
 [Return to Top](#table-of-contents)
 
-## Usage Examples: `_new.md`
+## Usage Examples
 
 ### Case 1: Convert Raw ZID Lines to Linked Notes
 Turn a selection of lines starting with 14-digit timestamps (ZIDs) into clean Wikilinks.

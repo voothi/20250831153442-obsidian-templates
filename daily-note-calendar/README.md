@@ -5,13 +5,14 @@
 This folder contains the templates and configuration details for the daily journaling and planning workflow.
 
 ## Table of Contents
-- [`day-planner.md`: Daily structure](#day-plannermd-daily-structure)
+- [Daily Structure](#daily-structure)
 - [Calendar Integration](#calendar-integration)
 - [Healthy Habits & Workflow](#healthy-habits--workflow)
 
 ---
 
-## `day-planner.md`: Daily Structure
+## Daily Structure
+`day-planner.md` [File Link](day-planner.md)
 A high-density planning template designed for focus and productivity.
 
 ### Features
