@@ -113,6 +113,11 @@ In this ecosystem, physical catalogs (folders) serve a specific, non-hierarchica
 - **Access Control**: Folders act like separate "library wings." This structure allows you to share, unshare, or delegate responsibility for an entire catalog (e.g., via Git submodules or separate vault syncing) without breaking the logical connections maintained by ZIDs.
 - **Granularity**: You can provide separate access to specific project folders or "unshare" private research catalogs, ensuring that the "Flat Base" remains structurally simple but administratively robust.
 
+### Future Outlook: Link Auditing & Partial Access
+A key challenge of this modular approach is **Link Integrity** when sharing partial units of the knowledge base:
+- **The "Out-of-Container" Link Problem**: When sharing a specific folder (container/catalog), we must ensure that the notes within do not critically depend on links pointing to notes *outside* that shared boundary.
+- **Link Auditing**: Future enhancements include developing dedicated scripts to audit and refactor links before delegation. These scripts will help identify "external dependencies" and ensure that the shared unit remains fully functional and contextually complete for the recipient.
+
 [Return to Top](#table-of-contents)
 
 ---
