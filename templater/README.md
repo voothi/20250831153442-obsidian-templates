@@ -185,6 +185,38 @@ How do you maintain the same thought across several languages (Russian, English,
 - **ZID as Anchor**: Searching for `20260103220434` will immediately list all available translations in your vault.
 - **Independence**: Each file is its own atomic unit with its own descriptive slug, yet they are logically tied together forever.
 
+### Case 6: Non-Linear Reasoning (The AI Web)
+The system allows a single unit of reasoning (an AI result, a hypothesis, a code snippet) to participate in **multiple logical chains** simultaneously. You can "twist" your knowledge base to look at the same data from different professional perspectives.
+
+**Example Scenario**: An AI provides a critical SQL optimization for a specific project.
+
+```mermaid
+graph TD
+    MOC1["## Project Alpha. MOC"] --> Node1["[[20260103-sql-optimization|Optimization Result]]"]
+    MOC2["## SQL Performance. MOC"] --> Node1
+    MOC3["## Hypothesis #42. MOC"] --> Node1
+    
+    style Node1 fill:#f9f,stroke:#333,stroke-width:2px
+```
+
+**How it works**:
+1. **The Node**: You create one note: `[[20260103120000-sql-optimization]]`.
+2. **The Links**: You place this link into three different MOC files:
+   - Your **Project dashboard** (for task completion).
+   - Your **SQL Knowledge base** (for future reference).
+   - Your **Experiment log** (for comparing AI hypotheses).
+3. **The Sync**: Running `_moc.md` automatically updates the note's frontmatter to reflect its three parents:
+   ```yaml
+   up:
+     - "[[Project Alpha]]"
+     - "[[SQL Performance]]"
+     - "[[Hypothesis #42]]"
+   ```
+
+**The Strategic Advantage**: Unlike folders, where you must choose *one* home for a file, this system allows information to live everywhere it is relevant. You can branch, compare, and merge logical paths at will.
+
+[Return to Top](#table-of-contents)
+
 ---
 
 ## Behind the Scenes: Metadata & Safety
