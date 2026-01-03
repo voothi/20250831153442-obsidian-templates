@@ -55,8 +55,10 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 This repository contains advanced [Templater](https://github.com/SilentVoid13/Templater) scripts and structural templates for Obsidian.md. Unlike filesystem-dependent approaches (like Dendron), it implements a "Flat Base" architecture where all notes reside at a single directory level, with logical hierarchy maintained purely through frontmatter and backlinks.
 
 Key capabilities include:
-1.  **Automated Hierarchy**: A `_moc.md` engine that automates many-to-many parent-child relationships.
-3.  **Cross-Platform Traceability**: Enabling synchronization of context between Obsidian, ChatGPT, and external logs using a single timestamp.
+1.  **Automated Creation**: The `_new.md` script generates physical files and formatted links from ZIDs or text, including support for **batch processing** (group notes).
+2.  **Seamless Renaming**: The `_update.md` engine synchronizes H1 titles with aliases and automatically refreshes backlinks across the vault.
+3.  **Automated Hierarchy**: A `_moc.md` engine that automates many-to-many parent-child relationships.
+4.  **Cross-Platform Traceability**: Enabling synchronization of context between Obsidian, ChatGPT, and external logs using a single timestamp.
 
 [Return to Top](#table-of-contents)
 
