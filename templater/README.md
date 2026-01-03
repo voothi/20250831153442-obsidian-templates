@@ -20,6 +20,7 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 - **ZID Parsing**: Recognizes 14-digit timestamps ([ZIDs](../README.md#the-zid-system-philosophy--standards)) and converts them into note titles.
 - **Sanitization**: Automatically handles umlauts (`ö` -> `oe`), spaces, and special characters for cross-platform compatibility.
 - **Description Split**: If enabled, splits the first sentence into the note title and treats the rest as the body description.
+- **Enforced Slug Length**: Automatically limits the filename slug to the **first 4 words** of the title to keep the vault clean and OS-compatible.
 - **Batch Processing**: Select multiple lines of ZIDs or links and process them all at once.
 
 ### Visual Guide
@@ -148,7 +149,7 @@ Highlight both sentences and run `Alt + Q`.
 
 **Result:**
 - **Link Title**: `The Architecture of Knowledge.` (The first sentence).
-- **Slug**: `YYYYMMDDHHMMSS-the-architecture-of-knowledge`
+- **Slug**: `YYYYMMDDHHMMSS-the-architecture-of-knowledge` (First 4 words preserved).
 - **New Note Content**: The second sentence ("It focuses on modularity and ZIDs.") is placed inside the note's **Description** section.
 
 > [!NOTE]
@@ -158,22 +159,20 @@ Highlight both sentences and run `Alt + Q`.
 If your selection contains Wikilinks that point to non-existent files (e.g., `[[Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
 
 ### Case 5: Multi-Language Knowledge Base (ZID Pivot)
-How do you maintain the same thought across several languages (Russian, English, German, Ukrainian)? You anchor them with the same **ZID**, using the slug to define the language.
+How do you maintain the same thought across several languages (Russian, English, German)? You anchor them with the same **ZID**, using the slug to define the language.
 
 **Input (Four translations, same ZID):**
 ```text
 20260103220434 Создать кнопку "Сделай всё хорошо" для пользователя системы.
 20260103220434 Create a “Do everything well” button for the system user.
 20260103220434 Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.
-20260103220434 Створіть кнопку «Зробити все добре» для користувача системи.
 ```
 
 **Output after `Alt + Q` (Four unique files, one indexable ID):**
 ```text
-[[20260103220434-sozdat-knopku-sdelaj-vse-horosho-dlya-polzovatelya-sistemy|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
-[[20260103220434-create-a-do-everything-well-button-for-the-system-user|Create a “Do everything well” button for the system user.]]
-[[20260103220434-erstellen-sie-einen-alles-gut-machen-button-fur-den-systembenutzer|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
-[[20260103220434-stvorit-knopku-zrobiti-vse-dobre-dlya-koristuvacha-sistemi|Створіть кнопку «Зробити все добре» для користувача системи.]]
+[[20260103220434-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
+[[20260103220434-create-a-do-everything|Create a “Do everything well” button for the system user.]]
+[[20260103220434-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
 ```
 
 **Why this works:**
