@@ -15,28 +15,12 @@ A curated collection of Obsidian templates and scripts for Templater and Daily N
 - [Workflow & Features](#workflow--features)
 - [Installation](#installation)
 - [Plugin Setup & Hotkeys](#plugin-setup--hotkeys)
-- [Current Limitations & Performance](#current-limitations--performance)
 - [Syncing](#syncing)
 - [Release Notes](#release-notes)
 - [RFCs](#rfcs)
+- [Current Limitations & Performance](#current-limitations--performance)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
 - [License](#license)
-
-[Return to Top](#table-of-contents)
-
----
-
-## Current Limitations & Performance
-
-As the system scales to handle thousands of notes, keep the following considerations in mind:
-
-### 1. `_moc.md` Performance
-- **Large Vaults**: Initial execution of the `_moc.md` script on vaults with over 20,000 records may take **several minutes**.
-- **Hardware Recommendations**: It is highly recommended to perform heavy MOC synchronization on a **PC/Desktop**. While execution on mobile/smartphone is possible, it is significantly slower and may experience timeouts.
-
-### 2. Filesystem & Obsidian Scalability
-- **File Volume**: Generating a vast number of atomic notes can eventually approach the practical limits of certain filesystems or Obsidian's indexing speed.
-- **Future Need (Rotation)**: Currently, the system lacks an automated "rotation" or archiving strategy for older files. Users with extremely high-volume vaults should monitor vault performance and consider manual archiving if search or startup times degrade.
 
 [Return to Top](#table-of-contents)
 
@@ -194,6 +178,20 @@ Technical decisions and implementation details are documented in the [docs/rfcs/
 
 ## Kardenwort Ecosystem
 This project is part of the **[Kardenwort](https://github.com/kardenwort)** environment, designed to create a focused and efficient learning ecosystem.
+
+[Return to Top](#table-of-contents)
+
+## Current Limitations & Performance
+
+As the system scales to handle thousands of notes, keep the following considerations in mind:
+
+### 1. `_moc.md` Performance
+- **Large Vaults**: Initial execution of the `_moc.md` script on vaults with over 20,000 records may take **several minutes**.
+- **Hardware Recommendations**: It is highly recommended to perform heavy MOC synchronization on a **PC/Desktop**. While execution on mobile/smartphone is possible, it is significantly slower and may experience timeouts.
+
+### 2. Filesystem & Obsidian Scalability
+- **File Volume**: Generating a vast number of atomic notes can eventually approach the practical limits of certain filesystems or Obsidian's indexing speed.
+- **Future Need (Rotation)**: Currently, the system lacks an automated "rotation" or archiving strategy for older files. Users with extremely high-volume vaults should monitor vault performance and consider manual archiving if search or startup times degrade.
 
 [Return to Top](#table-of-contents)
 
