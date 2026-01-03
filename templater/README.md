@@ -33,8 +33,6 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 
 [Return to Top](#table-of-contents)
 
----
-
 ## `_update.md`: Title & Backlink Sync
 Ensures that human-readable titles remain consistent throughout the vault.
 
@@ -49,14 +47,14 @@ Ensures that human-readable titles remain consistent throughout the vault.
 
 [Return to Top](#table-of-contents)
 
----
-
-## `_moc.md`: Map of Content Synchronization
-The "Engine" for hierarchical navigation.
+## `_moc.md`: Map of Content
+#### [`_moc.md`](_moc.md)
+The structural engine of the vault. It scans for specific headers to build and maintain the logical hierarchy of your notes.
 
 ### Features
-- **Global Scan**: Reads all notes with a `# MOC` header.
-- **Heuristic Mapping**: Determines parent-child relationships based on list indentation and links.
+- **Key Syntax**: Matches any header containing `MOC.` (e.g., `## MOC.` or `## Project Alpha. MOC`).
+- **Automation**: Automatically populates the `up` field in the frontmatter of linked notes based on their position under an MOC header.
+- **Hierarchical Depth**: Supports nested list indentation to map complex parent-child relationships.
 - **Frontmatter Automation**: Updates the `up` field in child notes for breadcrumb-style navigation.
 
 ### Visual Guide
@@ -66,11 +64,39 @@ The "Engine" for hierarchical navigation.
 
 [Return to Top](#table-of-contents)
 
----
+## The MOC Engine: `_moc.md`
+
+### 1. What is the `# MOC.` Header?
+The script triggers on headers that follow a specific pattern: `# MOC.` or `## [Topic]. MOC`.
+
+> [!IMPORTANT]
+> **The Dot Matters**: The script's logic is strictly keyed to identify the string `MOC.` (with the period). This prevents it from accidentally processing random text while allowing for descriptive headers like `## Biology Research. MOC`.
+
+### 2. Logical Multi-Node Chains (Many-to-Many)
+This system provides extreme **flexibility**. Unlike a rigid folder tree, a single note can belong to multiple branches of your knowledge base.
+
+- **How it works**: If you list `[[ZID-Atomic-Note]]` under three different MOC sections in three separate files, the `_moc.md` script will aggregate all three parents into the `up` field of that note's frontmatter.
+- **The Result**: A truly networked knowledge base where nodes participate in several logical chains simultaneously.
+
+### 3. Usage & Syntax
+To map your structure, use indented lists under an MOC header:
+
+```markdown
+## Projects. MOC
+- [[ZID-Project-A]]
+  - [[ZID-Task-1]]
+  - [[ZID-Task-2]]
+- [[ZID-Project-B]]
+  - [[ZID-Task-1]] (Note: Task 1 participates in both Projects!)
+```
+
+### 4. Integration with `_new.md`
+`_moc.md` and `_new.md` work in a continuous feedback loop:
+1. **Creation**: You use `_new.md` to create an atomic note. It initially points back to the note where it was created.
+2. **Structuring**: You then place that note's link into one or more MOC sections.
+3. **Synchronization**: Running `_moc.md` (via `Alt + A`) globally updates the `up` field, finalizing the note's position in your structural hierarchy.
 
 [Return to Top](#table-of-contents)
-
----
 
 ## Usage Examples: `_new.md`
 
@@ -97,8 +123,6 @@ Turn a selection of lines starting with 14-digit timestamps (ZIDs) into clean Wi
 - **Content Migration**: The second sentence ("This is the second sentence...") is moved to the new note's description.
 - **Batching**: Processes all selected ZID lines simultaneously while preserving list markers.
 
----
-
 ### Case 2: In-line Selection (New Note from Text)
 Highlight a phrase within an existing sentence to extract it into a new note.
 
@@ -110,8 +134,6 @@ Highlight a phrase within an existing sentence to extract it into a new note.
 **Result:**
 - The text is replaced with: `[[20260103204319-kardenwort-ecosystem|Kardenwort Ecosystem]]`
 - A new file is created with that ZID and title.
-
----
 
 ### Case 3: Selecting Multiple Sentences
 What happens if your selection contains more than one sentence?
@@ -132,12 +154,8 @@ Highlight both sentences and run `Alt + Q`.
 > [!NOTE]
 > The script uses simple punctuation detection (`.`, `?`, `!`) to perform this split, ensuring your main note stays concise while the details are offloaded to the atomic note.
 
----
-
 ### Case 4: Process Existing Wikilinks
 If your selection contains Wikilinks that point to non-existent files (e.g., `[[Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
-
----
 
 ## Behind the Scenes: Metadata & Safety
 
@@ -152,8 +170,6 @@ Every note created via `_new.md` is "born" with context:
 - **Sanitized Filenames**: Ensures all filenames are lowercase and cross-platform compatible (removing invalid characters like `:`, `_`, or trailing dots).
 
 [Return to Top](#table-of-contents)
-
----
 
 ## Installation & Hotkeys
 
