@@ -251,9 +251,9 @@ The system allows a single unit of reasoning (an AI result, a hypothesis, a code
 
 ```mermaid
 graph TD
-    MOC1["## Work"] --> Node1["[[20250803134529-goal-for-2025|Goal for 2025.]]"]
-    MOC2["## Finances"] --> Node1
-    MOC3["## Languages"] --> Node1
+    MOC1["## Work. MOC."] --> Node1["[[20250803134529-goal-for-2025|Goal for 2025.]]"]
+    MOC2["## Finances. MOC."] --> Node1
+    MOC3["## Languages. MOC."] --> Node1
     
     style Node1 fill:#f9f,stroke:#333,stroke-width:2px
 ```
@@ -267,9 +267,9 @@ graph TD
 3. **The Sync**: Running `_moc.md` automatically updates the note's frontmatter to reflect its multiple parents:
    ```yaml
    up:
-     - "[[Work]]"
-     - "[[Finances]]"
-     - "[[Languages]]"
+     - "[[20220201130701-work|Work.]]"
+     - "[[20220207181813-finances|Finances.]]"
+     - "[[20230104222039-languages|Languages.]]"
    ```
 
 **The Strategic Advantage**: Unlike folders, where you must choose *one* home for a file, this system allows information to live everywhere it is relevant. It enables the **polymorphic** existence of knowledge, allowing you to "twist" your perspective on the same data.
