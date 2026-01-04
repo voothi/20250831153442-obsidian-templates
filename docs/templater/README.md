@@ -119,16 +119,12 @@ When you run `_moc.md`, every child listed in the Structure MOC automatically re
 The engine builds the logical tree using two rules:
 1. **Vertical (Indentation)**: Indented items are children of the line above them.
    - *Example*:
-     ```markdown
      - [[20250803220646-work|Work.]]
          - [[20250805215439-regular-routines|Regular routines.]]
-     ```
    - *Result*: `Regular routines.` receives `up: [[20250803220646-work]]`.
 2. **Horizontal (Same-Line)**: Multiple links on a single line form a chain from left-to-right.
    - *Example from day-planner.md*:
-     ```markdown
      - [ ] 18:00 [[20250803220646-work|Work.]] [[20250803220746-block-3|Block 3.]] [[20250803220751-personal-development|Personal Development.]]
-     ```
    - *Result*: `Block 3.` becomes a child of `Work.`, and `Personal Development.` becomes a child of `Block 3.`.
 
 ### 5. Technical Limitations & Synchronization Logic
