@@ -6,11 +6,30 @@ This folder contains the core automation logic for the **ZID-based methodology**
 
 ## Table of Contents
 - [Smart Note Creation](#smart-note-creation)
+  - [Features](#features)
+  - [Visual Guide](#visual-guide)
 - [Seamless Renaming](#seamless-renaming)
+  - [Features](#features-1)
+  - [Visual Guide](#visual-guide-1)
 - [Automated Graph](#automated-graph)
+  - [Features](#features-2)
+  - [Visual Guide](#visual-guide-2)
 - [The MOC Engine](#the-moc-engine)
+  - [1. The Trigger Syntax](#1-the-trigger-syntax)
+  - [2. Logical Multi-Node Chains](#2-logical-multi-node-chains-many-to-many)
+  - [3. Real-World Examples: Core MOCs](#3-real-world-examples-core-mocs)
+  - [4. Tree Formation: Vertical & Horizontal Chains](#4-tree-formation-vertical--horizontal-chains)
+  - [5. Technical Limitations & Synchronization Logic](#5-technical-limitations--synchronization-logic)
 - [Usage Examples](#usage-examples)
+  - [Case 1: ZID Lines to Linked Notes](#case-1-convert-raw-zid-lines-to-linked-notes)
+  - [Case 2: In-line Selection](#case-2-in-line-selection-new-note-from-text)
+  - [Case 3: Selecting Multiple Sentences](#case-3-selecting-multiple-sentences)
+  - [Case 4: Process Existing Wikilinks](#case-4-process-existing-wikilinks)
+  - [Case 5: Multi-Language Knowledge Base](#case-5-multi-language-knowledge-base-zid-pivot)
+  - [Case 6: Non-Linear Reasoning](#case-6-non-linear-reasoning-the-ai-web)
 - [Behind the Scenes](#behind-the-scenes-metadata--safety)
+  - [1. Metadata Inheritance](#1-metadata-inheritance)
+  - [2. Safety First](#2-safety-first)
 - [Installation & Hotkeys](#installation--hotkeys)
 
 ---
@@ -90,8 +109,8 @@ This provides extreme **flexibility**. Unlike a rigid folder tree, a single note
 ### 3. Real-World Examples: Core MOCs
 The vault's entry points are powered by this engine. See how the root connects to the main structure:
 
-- **[root.md](../docs/root.md)**: The "Zero-Level" entry point.
-- **[Structure MOC](../docs/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
+- **[root.md](../vault/root.md)**: The "Zero-Level" entry point.
+- **[Structure MOC](../vault/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
 
 When you run `_moc.md`, every child listed in the Structure MOC automatically receives `up: "[[20220207182435-structure-moc]]"` in its frontmatter.
 

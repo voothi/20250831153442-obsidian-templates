@@ -174,7 +174,7 @@ While Logseq and similar outliners offer great flexibility, the ZID-based atomic
 To maintain this portability and flexibility, we follow strict linking rules:
 - **No Paths in Links**: Wikilinks must never contain folder paths (e.g., use `[[20260103210512-note]]`, never `[[folder/subfolder/20260103210512-note]]`).
 - **Internal Maintenance**: Because links are naked, Obsidian's internal cache and our scripts manage the "truth" of the connection even if you move files between folders.
-- **Portability**: This ensures the entire vault can be synced across any OS (Windows, Linux, Android) without breaking links or hitting CVS (Concurrent Versions System) restrictions.
+- **Portability**: This ensures the entire vault can be synced across any OS (Windows, Linux, Android) without breaking links or hitting VCS (Version Control System) restrictions.
 
 [Return to Top](#table-of-contents)
 

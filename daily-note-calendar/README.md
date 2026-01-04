@@ -6,7 +6,11 @@ This folder contains the templates and configuration details for the daily journ
 
 ## Table of Contents
 - [Daily Structure](#daily-structure)
+  - [Features](#features)
+  - [Visual Guide](#visual-guide)
 - [Calendar Integration](#calendar-integration)
+  - [Recommended Settings](#recommended-settings)
+  - [Visual Guide](#visual-guide-1)
 - [Healthy Habits & Workflow](#healthy-habits--workflow)
 
 ---
