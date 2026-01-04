@@ -59,6 +59,7 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 
 ## Seamless Renaming
 [_update.md](../../vault/templates/_update.md)
+
 Ensures that human-readable titles remain consistent throughout the vault.
 
 ### Features
