@@ -7,7 +7,7 @@ This folder contains the core automation logic for the **ZID-based methodology**
 ## Table of Contents
 - [Smart Note Creation](#smart-note-creation)
 - [Seamless Renaming](#seamless-renaming)
-- [Automated Hierarchy](#automated-hierarchy)
+- [Automated Graph](#automated-graph)
 - [The MOC Engine](#the-moc-engine)
 - [Usage Examples](#usage-examples)
 - [Behind the Scenes](#behind-the-scenes-metadata--safety)
@@ -53,10 +53,10 @@ Ensures that human-readable titles remain consistent throughout the vault.
 
 [Return to Top](#table-of-contents)
 
-## Automated Hierarchy
+## Automated Graph
 [_moc.md](_moc.md)
 
-The structural engine of the vault. It scans for specific headers to build and maintain the logical hierarchy of your notes.
+The structural engine of the vault. It scans for specific headers to build and maintain the logical graph of your notes.
 
 ### Features
 - **Key Syntax**: Matches any header containing `MOC.` (e.g., `## MOC.` or `## Project Alpha. MOC`).

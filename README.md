@@ -11,7 +11,7 @@ A **ZID-based methodology** expressed through a curated collection of Obsidian t
   - [Templater Scripts](#templater-scripts)
     - [Automated Creation](#automated-creation)
     - [Seamless Renaming](#seamless-renaming)
-    - [Automated Hierarchy](#automated-hierarchy)
+    - [Automated Graph](#automated-graph)
   - [Daily Note Templates](#daily-note-templates)
     - [Day Planner Template](#day-planner-template)
 - [The ZID System: Philosophy & Standards](#the-zid-system-philosophy--standards)
@@ -52,12 +52,12 @@ A **ZID-based methodology** expressed through a curated collection of Obsidian t
 ---
 
 ## Description
-This repository contains advanced [Templater](https://github.com/SilentVoid13/Templater) scripts and structural templates for Obsidian.md. Unlike filesystem-dependent approaches (like Dendron), it implements a "Flat Base" architecture where all notes reside at a single directory level, with logical hierarchy maintained purely through frontmatter and backlinks.
+This repository contains advanced [Templater](https://github.com/SilentVoid13/Templater) scripts and structural templates for Obsidian.md. Unlike filesystem-dependent approaches (like Dendron), it implements a "Flat Base" architecture where all notes reside at a single directory level, with logical graph maintained purely through frontmatter and backlinks.
 
 Key capabilities include:
 1.  **Automated Creation**: The `_new.md` script generates physical files and formatted links from ZIDs or text, including support for **batch processing** (group notes).
 2.  **Seamless Renaming**: The `_update.md` engine synchronizes H1 titles with aliases and automatically refreshes backlinks across the vault.
-3.  **Automated Hierarchy**: A `_moc.md` engine that automates many-to-many parent-child relationships.
+3.  **Automated Graph**: A `_moc.md` engine that automates many-to-many parent-child relationships.
 
 [Return to Top](#table-of-contents)
 
@@ -86,7 +86,7 @@ Maintains consistency across your vault.
   - Updates the `aliases` in the current file based on the H1 header.
   - Automatically searches for and updates backlinks in other files to reflect the new title, ensuring display text stays in sync.
 
-## Automated Hierarchy
+## Automated Graph
 [_moc.md](templater/_moc.md)
 
 The engine for your Map of Content.
