@@ -8,7 +8,7 @@ This folder contains the core automation logic for the **ZID-based methodology**
 - [Smart Note Creation](#smart-note-creation)
 - [Seamless Renaming](#seamless-renaming)
 - [Automated Hierarchy](#automated-hierarchy)
-- [The MOC Engine](#the-moc-engine-_mocmd)
+- [The MOC Engine](#the-moc-engine)
 - [Usage Examples](#usage-examples)
 - [Behind the Scenes](#behind-the-scenes-metadata--safety)
 - [Installation & Hotkeys](#installation--hotkeys)
@@ -71,9 +71,9 @@ The structural engine of the vault. It scans for specific headers to build and m
 
 [Return to Top](#table-of-contents)
 
-## The MOC Engine: `_moc.md`
+## The MOC Engine
 
-### 1. What is the `# MOC.` Header?
+### 1. The Trigger Syntax
 The script triggers on headers that follow a specific pattern: `# MOC.` or `## [Topic]. MOC`.
 
 > [!IMPORTANT]
