@@ -13,7 +13,7 @@ A **ZID-based methodology** expressed through a curated collection of Obsidian t
     - [Seamless Renaming](#seamless-renaming)
     - [Automated Hierarchy](#automated-hierarchy)
   - [Daily Note Templates](#daily-note-templates)
-    - [day-planner.md](#day-plannermd)
+    - [Day Planner Template](#day-planner-template)
 - [The ZID System: Philosophy & Standards](#the-zid-system-philosophy--standards)
   - [Core Purpose](#core-purpose)
   - [Rules of Engagement](#rules-of-engagement)
@@ -43,7 +43,7 @@ A **ZID-based methodology** expressed through a curated collection of Obsidian t
 - [RFCs](#rfcs)
 - [Kardenwort Ecosystem](#kardenwort-ecosystem)
 - [Current Limitations & Performance](#current-limitations--performance)
-  - [1. _moc.md Performance](#1-_mocmd-performance)
+  - [1. MOC Engine Performance](#1-moc-engine-performance)
   - [2. Filesystem & Obsidian Scalability](#2-filesystem--obsidian-scalability)
 - [License](#license)
 
@@ -97,7 +97,7 @@ The engine for your Map of Content.
 
 ### Daily Note Templates
 
-#### day-planner.md
+#### Day Planner Template
 [day-planner.md](daily-note-calendar/day-planner.md)
 
 A structured template for daily planning.
@@ -296,7 +296,7 @@ This project is part of the **[Kardenwort](https://github.com/kardenwort)** envi
 
 As the system scales to handle thousands of notes, keep the following considerations in mind:
 
-### 1. `_moc.md` Performance
+### 1. MOC Engine Performance
 - **Large Vaults**: Initial execution of the `_moc.md` script on vaults with over 20,000 records may take **several minutes**.
 - **Hardware Recommendations**: It is highly recommended to perform heavy MOC synchronization on a **PC/Desktop**. While execution on mobile/smartphone is possible, it is significantly slower and may experience timeouts.
 
