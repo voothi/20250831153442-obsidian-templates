@@ -211,18 +211,14 @@ If your selection contains Wikilinks that point to non-existent files (e.g., `[[
 How do you maintain the same thought across several languages (Russian, English, German)? You anchor them with the same **ZID**, using the slug to define the language.
 
 **Input (Four translations, same ZID):**
-```text
-20260103220434 Создать кнопку "Сделай всё хорошо" для пользователя системы.
-20260103220434 Create a “Do everything well” button for the system user.
-20260103220434 Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.
-```
+- [ ] 20260103220434 Создать кнопку "Сделай всё хорошо" для пользователя системы.
+- [ ] 20260103220434 Create a “Do everything well” button for the system user.
+- [ ] 20260103220434 Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.
 
 **Output after `Alt + Q` (Four unique files, one indexable ID):**
-```text
-[[20260103220434-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
-[[20260103220434-create-a-do-everything|Create a “Do everything well” button for the system user.]]
-[[20260103220434-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
-```
+- [ ] [[20260103220434-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
+- [ ] [[20260103220434-create-a-do-everything|Create a “Do everything well” button for the system user.]]
+- [ ] [[20260103220434-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
 
 **Why this works:**
 - **ZID as Anchor**: Searching for `20260103220434` will immediately list all available translations in your vault.
