@@ -196,6 +196,9 @@ Highlight a phrase within an existing sentence to extract it into a new note.
 - The text is replaced with: `[[20260103204319-kardenwort-ecosystem|Kardenwort Ecosystem]]`
 - A new file is created with that ZID and title.
 
+**Active Link (Obsidian/Internal):**
+- [[20260103204319-kardenwort-ecosystem|Kardenwort Ecosystem]]
+
 ### Case 3: Selecting Multiple Sentences
 What happens if your selection contains more than one sentence?
 
@@ -209,14 +212,20 @@ Highlight both sentences and run `Alt + Q`.
 
 **Result:**
 - **Link Title**: `The Architecture of Knowledge.` (The first sentence).
-- **Slug**: `YYYYMMDDHHMMSS-the-architecture-of-knowledge` (First 4 words preserved).
+- **Slug**: `20260103210000-the-architecture-of-knowledge`
 - **New Note Content**: The second sentence ("It focuses on modularity and ZIDs.") is placed inside the note's **Description** section.
+
+**Active Link (Obsidian/Internal):**
+- [[20260103210000-the-architecture-of-knowledge|The Architecture of Knowledge.]]
 
 > [!NOTE]
 > The script uses simple punctuation detection (`.`, `?`, `!`) to perform this split, ensuring your main note stays concise while the details are offloaded to the atomic note.
 
 ### Case 4: Process Existing Wikilinks
-If your selection contains Wikilinks that point to non-existent files (e.g., `[[Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
+If your selection contains Wikilinks that point to non-existent files (e.g., `[[20260103220000-future-concept|Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
+
+**Active Link (Obsidian/Internal):**
+- [[20260103220000-future-concept|Future Concept]]
 
 ### Case 5: Multi-Language Knowledge Base (ZID Pivot)
 How do you maintain the same thought across several languages (Russian, English, German)? You anchor them with the same **ZID**, using the slug to define the language.
