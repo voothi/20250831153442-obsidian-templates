@@ -98,8 +98,18 @@ The engine builds the logical tree using two rules:
 1. **Vertical (Indentation)**: Indented items are children of the line above them.
 2. **Horizontal (Same-Line)**: Multiple links on a single line form a chain from left-to-right (e.g., `- [[Parent]] [[Child]] [[Grandchild]]`).
 
-### 5. Technical Limitations & Deletion Logic
-Understanding how the sync handles changes is critical for vault maintenance:
+### 5. Technical Limitations & Synchronization Logic
+Understanding how the sync handles changes is critical. The script enforces a **Single Source of Truth** model.
+
+#### The MOC is the Master
+- **Unidirectional Sync**: The structure defined in your `# MOC.` sections is the **only** authority for the hierarchy.
+- **Overwrite Behavior**: When you run `_moc.md`, the script **overwrites** the `up` field in every child note.
+  - *Why?* To ensure the logical graph (Frontmatter) perfectly matches the visual map (MOCs). If you manually edit the `up` field in a note, your changes will be **erased** on the next sync unless you also update the MOC.
+
+#### Hierarchy Formation
+The parent for any node is determined by:
+1.  **The File**: If a link is at the root of a `# MOC.` section, its parent is the **MOC File itself**.
+2.  **The Indentation**: If a link is indented, its parent is the **list item directly above it**.
 
 #### What happens if I delete a node?
 - **From an MOC**: If you remove a link from all MOC sections, the engine identifies it as an **Orphan**. On the next sync, it will surgically **clear** the `up` field from that note's YAML.
