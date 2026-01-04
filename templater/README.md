@@ -35,7 +35,7 @@ This folder contains the core automation logic for the **ZID-based methodology**
 ---
 
 ## Smart Note Creation
-[_new.md](_new.md)
+[_new.md](../vault/templates/_new.md)
 
 Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into formatted notes.
 
@@ -58,7 +58,7 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 [Return to Top](#table-of-contents)
 
 ## Seamless Renaming
-[_update.md](_update.md)
+[_update.md](../vault/templates/_update.md)
 Ensures that human-readable titles remain consistent throughout the vault.
 
 ### Features
@@ -73,7 +73,7 @@ Ensures that human-readable titles remain consistent throughout the vault.
 [Return to Top](#table-of-contents)
 
 ## Automated Graph
-[_moc.md](_moc.md)
+[_moc.md](../vault/templates/_moc.md)
 
 The structural engine of the vault. It scans for specific headers to build and maintain the logical graph of your notes.
 

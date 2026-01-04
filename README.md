@@ -67,7 +67,7 @@ Key capabilities include:
 > [Full Documentation](templater/README.md)
 
 ## Automated Creation
-[_new.md](templater/_new.md)
+[_new.md](vault/templates/_new.md)
 
 The primary script for creating new notes. 
 - **Features**: 
@@ -80,7 +80,7 @@ The primary script for creating new notes.
 > **Planned Enhancement**: Future versions will improve handling of nested ZID entries within sentences, automatically splitting them into new lines and processing them recursively.
 
 ## Seamless Renaming
-[_update.md](templater/_update.md)
+[_update.md](vault/templates/_update.md)
 
 Maintains consistency across your vault.
 - **Features**:
@@ -88,7 +88,7 @@ Maintains consistency across your vault.
   - Automatically searches for and updates backlinks in other files to reflect the new title, ensuring display text stays in sync.
 
 ## Automated Graph
-[_moc.md](templater/_moc.md)
+[_moc.md](vault/templates/_moc.md)
 
 The engine for your Map of Content.
 - **Features**:
@@ -100,7 +100,7 @@ The engine for your Map of Content.
 > [Full Documentation](daily-note-calendar/README.md)
 
 #### Day Planner Template
-[day-planner.md](daily-note-calendar/day-planner.md)
+[day-planner.md](vault/templates/day-planner.md)
 
 A structured template for daily planning.
 - **Features**:
