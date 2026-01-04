@@ -35,12 +35,12 @@ This folder contains the core automation logic for the **ZID-based methodology**
 ---
 
 ## Smart Note Creation
-[_new.md](../vault/templates/_new.md)
+[_new.md](../../vault/templates/_new.md)
 
 Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into formatted notes.
 
 ### Features
-- **ZID Parsing**: Recognizes 14-digit timestamps ([ZIDs](../README.md#the-zid-system-philosophy--standards)) and converts them into note titles.
+- **ZID Parsing**: Recognizes 14-digit timestamps ([ZIDs](../../README.md#the-zid-system-philosophy--standards)) and converts them into note titles.
 - **Sanitization**: Automatically handles umlauts (`ö` -> `oe`), spaces, and special characters for cross-platform compatibility.
 - **Description Split**: If enabled, splits the first sentence into the note title and treats the rest as the body description.
 - **Enforced Slug Length**: Automatically limits the filename slug to a specific number of words (Default: **4**) to keep the vault clean. This is configurable via the `SLUG_WORD_COUNT` setting in the script header.
@@ -58,7 +58,7 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 [Return to Top](#table-of-contents)
 
 ## Seamless Renaming
-[_update.md](../vault/templates/_update.md)
+[_update.md](../../vault/templates/_update.md)
 Ensures that human-readable titles remain consistent throughout the vault.
 
 ### Features
@@ -73,7 +73,7 @@ Ensures that human-readable titles remain consistent throughout the vault.
 [Return to Top](#table-of-contents)
 
 ## Automated Graph
-[_moc.md](../vault/templates/_moc.md)
+[_moc.md](../../vault/templates/_moc.md)
 
 The structural engine of the vault. It scans for specific headers to build and maintain the logical graph of your notes.
 
@@ -109,8 +109,8 @@ This provides extreme **flexibility**. Unlike a rigid folder tree, a single note
 ### 3. Real-World Examples: Core MOCs
 The vault's entry points are powered by this engine. See how the root connects to the main structure:
 
-- **[root.md](../vault/root.md)**: The "Zero-Level" entry point.
-- **[Structure MOC](../vault/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
+- **[root.md](../../vault/root.md)**: The "Zero-Level" entry point.
+- **[Structure MOC](../../vault/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
 
 When you run `_moc.md`, every child listed in the Structure MOC automatically receives `up: "[[20220207182435-structure-moc]]"` in its frontmatter.
 

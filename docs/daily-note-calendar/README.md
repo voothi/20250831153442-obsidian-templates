@@ -16,7 +16,7 @@ This folder contains the templates and configuration details for the daily journ
 ---
 
 ## Daily Structure
-[day-planner.md](../vault/templates/day-planner.md)
+[day-planner.md](../../vault/templates/day-planner.md)
 A high-density planning template designed for focus and productivity.
 
 ### Features

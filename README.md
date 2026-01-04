@@ -64,7 +64,7 @@ Key capabilities include:
 ## Templates Overview
 
 ### Templater Scripts
-> [Full Documentation](templater/README.md)
+> [Full Documentation](docs/templater/README.md)
 
 ## Automated Creation
 [_new.md](vault/templates/_new.md)
@@ -97,7 +97,7 @@ The engine for your Map of Content.
   - Supports nested indentation for parent-child relationship mapping.
 
 ### Daily Note Templates
-> [Full Documentation](daily-note-calendar/README.md)
+> [Full Documentation](docs/daily-note-calendar/README.md)
 
 #### Day Planner Template
 [day-planner.md](vault/templates/day-planner.md)
