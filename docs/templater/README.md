@@ -272,6 +272,11 @@ graph TD
      - "[[20230104222039-languages|Languages.]]"
    ```
 
+**Active Links (Obsidian/Internal):**
+- [[20220201130701-work|Work.]]
+- [[20220207181813-finances|Finances.]]
+- [[20230104222039-languages|Languages.]]
+
 **The Strategic Advantage**: Unlike folders, where you must choose *one* home for a file, this system allows information to live everywhere it is relevant. It enables the **polymorphic** existence of knowledge, allowing you to "twist" your perspective on the same data.
 
 [Return to Top](#table-of-contents)
