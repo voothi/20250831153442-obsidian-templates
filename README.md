@@ -7,6 +7,7 @@ A **ZID-based methodology** expressed through a curated collection of Obsidian t
 
 ## Table of Contents
 - [Description](#description)
+- [Repository Structure](#repository-structure)
 - [Templates Overview](#templates-overview)
   - [Templater Scripts](#templater-scripts)
     - [Automated Creation](#automated-creation)
@@ -60,6 +61,34 @@ Key capabilities include:
 3.  **Automated Graph**: A `_moc.md` engine that automates many-to-many parent-child relationships.
 
 [Return to Top](#table-of-contents)
+
+## Repository Structure
+
+```text
+.
+├── docs/                       # Technical Manuals & Assets
+│   ├── assets/                 # Screenshots & Visual Aids
+│   ├── daily-note-calendar/    # Planner Documentation
+│   │   └── README.md
+│   ├── rfcs/                   # Design Proposals & History
+│   └── templater/              # Automation Documentation
+│       └── README.md
+├── vault/                      # Functional Obsidian Example Vault
+│   ├── templates/              # Master Scripts & Templates
+│   │   ├── _moc.md             # Graph Engine
+│   │   ├── _new.md             # Note Creator
+│   │   ├── _update.md          # Name Sync
+│   │   ├── day-planner.md      # Daily Template
+│   │   └── README.md           # Setup Guide
+│   ├── root.md                 # Entry Point
+│   └── 20220207182435-structure-moc.md # Main Index
+├── global_sync_v2.4.md         # Master Sync Logic (Ref)
+├── LICENSE                     # MIT License
+├── README.md                   # Portal & Methodology Overview
+├── release-notes.md            # Version History (v1.0.0)
+├── rsync_v2.2.md               # Sync Version History
+└── sync_v2.5.md                # Current Sync Logic
+```
 
 ## Templates Overview
 
