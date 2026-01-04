@@ -80,8 +80,9 @@ Key capabilities include:
 │   │   ├── _update.md          # Name Sync
 │   │   ├── day-planner.md      # Daily Template
 │   │   └── README.md           # Setup Guide
-│   ├── root.md                 # Entry Point
-│   └── 20220207182435-structure-moc.md # Main Index
+│   └── voothi/                 # Main Content Catalog (Separation of Resp.)
+│       ├── root.md             # Entry Point
+│       └── 20220207182435-structure-moc.md # Main Index
 ├── a/                          # Archive (Hidden) - Historical scripts/sync logic
 ├── LICENSE                     # MIT License
 ├── README.md                   # Portal & Methodology Overview
@@ -229,9 +230,9 @@ A key challenge of this modular approach is **Link Integrity** when sharing part
 [Return to Top](#table-of-contents)
 
 ## Installation
-1. Copy the contents of the `templater/` directory to your Obsidian vault's template folder.
+1. Copy the contents of the `vault/templates/` directory to your Obsidian vault's template folder.
 2. Configure **Templater** settings to point to this folder.
-3. (Optional) Copy `daily-note-calendar/day-planner.md` to your daily notes template folder.
+3. (Optional) Configure **Daily Note Calendar** to use `vault/templates/day-planner.md` as your daily template.
 
 [Return to Top](#table-of-contents)
 

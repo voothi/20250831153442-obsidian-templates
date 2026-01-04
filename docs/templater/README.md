@@ -110,8 +110,8 @@ This provides extreme **flexibility**. Unlike a rigid folder tree, a single note
 ### 3. Real-World Examples: Core MOCs
 The vault's entry points are powered by this engine. See how the root connects to the main structure:
 
-- **[root.md](../../vault/root.md)**: The "Zero-Level" entry point.
-- **[Structure MOC](../../vault/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
+- **[Root](../../vault/voothi/root.md)**: The "Zero-Level" entry point.
+- **[Structure MOC](../../vault/voothi/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
 
 When you run `_moc.md`, every child listed in the Structure MOC automatically receives `up: "[[20220207182435-structure-moc]]"` in its frontmatter.
 
