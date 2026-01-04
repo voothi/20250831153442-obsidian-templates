@@ -82,12 +82,10 @@ Key capabilities include:
 │   │   └── README.md           # Setup Guide
 │   ├── root.md                 # Entry Point
 │   └── 20220207182435-structure-moc.md # Main Index
-├── global_sync_v2.4.md         # Master Sync Logic (Ref)
+├── a/                          # Archive (Hidden) - Historical scripts/sync logic
 ├── LICENSE                     # MIT License
 ├── README.md                   # Portal & Methodology Overview
-├── release-notes.md            # Version History (v1.0.0)
-├── rsync_v2.2.md               # Sync Version History
-└── sync_v2.5.md                # Current Sync Logic
+└── release-notes.md            # Version History
 ```
 
 ## Templates Overview
