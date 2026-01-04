@@ -111,6 +111,11 @@ The parent for any node is determined by:
 1.  **The File**: If a link is at the root of a `# MOC.` section, its parent is the **MOC File itself**.
 2.  **The Indentation**: If a link is indented, its parent is the **list item directly above it**.
 
+#### Merge & De-duplicate Logic
+What happens if a node appears multiple times?
+- **Same Parent, Multiple Places**: If `[[Node A]]` is listed under `[[Parent B]]` in two different files, the script **de-duplicates** the entry. `Node A` will have `up: [[Parent B]]` only once.
+- **Different Parents (Polymorphism)**: If `[[Node A]]` is listed under `[[Parent B]]` and also under `[[Parent C]]`, the script **merges** them. `Node A` will have `up: [[Parent B]], [[Parent C]]`.
+
 #### What happens if I delete a node?
 - **From an MOC**: If you remove a link from all MOC sections, the engine identifies it as an **Orphan**. On the next sync, it will surgically **clear** the `up` field from that note's YAML.
 - **From the Filesystem**: If the file itself is deleted, the engine simply skips it. Any underlying children in the MOC will "adopt" the next available parent in the stack.
