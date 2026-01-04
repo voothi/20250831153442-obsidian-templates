@@ -56,7 +56,13 @@ These scripts automate the structure and naming of your notes.
 
 ## Technical Manuals
 For deep-dives into the logic and advanced usage examples, refer to the root documentation:
+**Local Files** (if using the full repository):
 - [Templater Automation Guide](../../templater/README.md)
 - [Daily Planning Guide](../../daily-note-calendar/README.md)
+
+**Online Documentation**:
+- [GitHub Repository](https://github.com/voothi/20250831153442-obsidian-templates)
+- [Templater Manual (Web)](https://github.com/voothi/20250831153442-obsidian-templates/blob/main/templater/README.md)
+- [Daily Planning Manual (Web)](https://github.com/voothi/20250831153442-obsidian-templates/blob/main/daily-note-calendar/README.md)
 
 [Return to Top](#table-of-contents)
