@@ -82,7 +82,7 @@ Key capabilities include:
 │   │   └── README.md           # Setup Guide
 │   └── voothi/                 # Main Content Catalog (Separation of Resp.)
 │       ├── root.md             # Entry Point
-│       └── 20220207182435-structure-moc.md # Main Index
+│       └── 20260104122165-structure-moc.md # Main Index
 ├── a/                          # Archive (Hidden) - Historical scripts/sync logic
 ├── LICENSE                     # MIT License
 ├── README.md                   # Portal & Methodology Overview
@@ -290,9 +290,9 @@ By using the **ZID Pivot** (sharing the same ZID prefix across multiple notes), 
 
 ### 2. Prompt Versioning & Multi-Language Engineering
 You can maintain your prompts in several languages (RU, EN, DE, etc.) for the same conceptual goal:
-- `20260103220434-ru-prompt.md`
-- `20260103220434-en-prompt.md`
-Searching for the ZID `20260103220434` immediately gathers all language versions of that prompt, making it easy to iterate and improve instructions across different linguistic contexts.
+- `20260104122209-ru-prompt.md`
+- `20260104122209-en-prompt.md`
+Searching for the ZID `20260104122209` immediately gathers all language versions of that prompt, making it easy to iterate and improve instructions across different linguistic contexts.
 
 ### 3. Recording Results & Iterative Refinement
 Each AI interaction is recorded as an atomic node. You can link these results back to your original hypotheses via MOCs, building a transparent audit trail of how your project evolved from an initial prompt to a finalized result.

@@ -4,4 +4,4 @@ aliases:
 ---
 # root. MOC.
 
-- [[20220207182435-structure-moc|Structure.]]
+- [[20260104122165-structure-moc|Structure.]]

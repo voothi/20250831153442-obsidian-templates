@@ -1,7 +1,7 @@
 ﻿---
 aliases:
-  - Books.
+  - Regular routines.
 up: "[[20260104122165-structure-moc]]"
 ---
 
-# Books.
+# Regular routines.

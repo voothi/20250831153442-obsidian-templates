@@ -111,9 +111,9 @@ This provides extreme **flexibility**. Unlike a rigid folder tree, a single note
 The vault's entry points are powered by this engine. See how the root connects to the main structure:
 
 - **[Root](../../vault/voothi/root.md)**: The "Zero-Level" entry point.
-- **[Structure MOC](../../vault/voothi/20220207182435-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
+- **[Structure MOC](../../vault/voothi/20260104122165-structure-moc.md)**: The primary index for all major categories (Health, Work, Knowledge, etc.).
 
-When you run `_moc.md`, every child listed in the Structure MOC automatically receives `up: "[[20220207182435-structure-moc]]"` in its frontmatter.
+When you run `_moc.md`, every child listed in the Structure MOC automatically receives `up: "[[20260104122165-structure-moc]]"` in its frontmatter.
 
 ### 4. Tree Formation: Vertical & Horizontal Chains
 The engine builds the logical tree using two rules:
@@ -162,21 +162,21 @@ Turn a selection of lines starting with 14-digit timestamps (ZIDs) into clean Wi
 
 **Input (Selection):**
 ```text
-20251226135208 This is the first sentence of the first entry. This is the second sentence which moves inside.
+20260104122205 This is the first sentence of the first entry. This is the second sentence which moves inside.
 
-- [ ] 20251226135257 This is the first sentence of the second entry.
+- [ ] 20260104122204 This is the first sentence of the second entry.
 ```
 
 **Output (Updated Selection):**
 ```text
-[[20251226135208-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
+[[20260104122205-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
 
-- [ ] [[20251226135257-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
+- [ ] [[20260104122204-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
 ```
 
 **Active Links (Obsidian/Internal):**
-- [[20251226135208-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
-- [[20251226135257-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
+- [[20260104122205-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
+- [[20260104122204-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
 
 **What happens:**
 - **Sanitization**: Filenames/Wikilinks are automatically sanitized (handling spaces, special characters, and umlauts) while preserving the **original input language**.
@@ -193,11 +193,11 @@ Highlight a phrase within an existing sentence to extract it into a new note.
 3. Run `Alt + Q`.
 
 **Result:**
-- The text is replaced with: `[[20260103204319-kardenwort-ecosystem|Kardenwort Ecosystem]]`
+- The text is replaced with: `[[20260104122206-kardenwort-ecosystem|Kardenwort Ecosystem]]`
 - A new file is created with that ZID and title.
 
 **Active Link (Obsidian/Internal):**
-- [[20260103204319-kardenwort-ecosystem|Kardenwort Ecosystem]]
+- [[20260104122206-kardenwort-ecosystem|Kardenwort Ecosystem]]
 
 ### Case 3: Selecting Multiple Sentences
 What happens if your selection contains more than one sentence?
@@ -212,55 +212,55 @@ Highlight both sentences and run `Alt + Q`.
 
 **Result:**
 - **Link Title**: `The Architecture of Knowledge.` (The first sentence).
-- **Slug**: `20260103210000-the-architecture-of-knowledge`
+- **Slug**: `20260104122207-the-architecture-of-knowledge`
 - **New Note Content**: The second sentence ("It focuses on modularity and ZIDs.") is placed inside the note's **Description** section.
 
 **Active Link (Obsidian/Internal):**
-- [[20260103210000-the-architecture-of-knowledge|The Architecture of Knowledge.]]
+- [[20260104122207-the-architecture-of-knowledge|The Architecture of Knowledge.]]
 
 > [!NOTE]
 > The script uses simple punctuation detection (`.`, `?`, `!`) to perform this split, ensuring your main note stays concise while the details are offloaded to the atomic note.
 
 ### Case 4: Process Existing Wikilinks
-If your selection contains Wikilinks that point to non-existent files (e.g., `[[20260103220000-future-concept|Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
+If your selection contains Wikilinks that point to non-existent files (e.g., `[[20260104122208-future-concept|Future Concept]]`), the script will generate the `.md` files for them without changing your original text. This is perfect for "filling in" the red links in a Map of Content.
 
 **Active Link (Obsidian/Internal):**
-- [[20260103220000-future-concept|Future Concept]]
+- [[20260104122208-future-concept|Future Concept]]
 
 ### Case 5: Multi-Language Knowledge Base (ZID Pivot)
 How do you maintain the same thought across several languages (Russian, English, German)? You anchor them with the same **ZID**, using the slug to define the language.
 
 **Input (Four translations, same ZID):**
 ```text
-- [ ] 20260103220434 Создать кнопку "Сделай всё хорошо" для пользователя системы.
-- [ ] 20260103220434 Create a “Do everything well” button for the system user.
-- [ ] 20260103220434 Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.
+- [ ] 20260104122209 Создать кнопку "Сделай всё хорошо" для пользователя системы.
+- [ ] 20260104122209 Create a “Do everything well” button for the system user.
+- [ ] 20260104122209 Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.
 ```
 
 **Output after `Alt + Q` (Four unique files, one indexable ID):**
 ```text
-- [ ] [[20260103220434-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
-- [ ] [[20260103220434-create-a-do-everything|Create a “Do everything well” button for the system user.]]
-- [ ] [[20260103220434-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
+- [ ] [[20260104122209-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
+- [ ] [[20260104122209-create-a-do-everything|Create a “Do everything well” button for the system user.]]
+- [ ] [[20260104122209-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
 ```
 
 **Active Links (Obsidian/Internal):**
-- [[20260103220434-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
-- [[20260103220434-create-a-do-everything|Create a “Do everything well” button for the system user.]]
-- [[20260103220434-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
+- [[20260104122209-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
+- [[20260104122209-create-a-do-everything|Create a “Do everything well” button for the system user.]]
+- [[20260104122209-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
 
 **Why this works:**
-- **ZID as Anchor**: Searching for `20260103220434` will immediately list all available translations in your vault.
+- **ZID as Anchor**: Searching for `20260104122209` will immediately list all available translations in your vault.
 - **Independence**: Each file is its own atomic unit with its own descriptive slug, yet they are logically tied together forever.
 
 ### Case 6: Non-Linear Reasoning (The AI Web)
 The system allows a single unit of reasoning (an AI result, a hypothesis, a code snippet) to participate in **multiple logical chains** simultaneously. You can "twist" your knowledge base to look at the same data from different professional perspectives.
 
-**Real-World Example**: The [[20250803134529-goal-for-2025|Goal for 2025.]] note.
+**Real-World Example**: The [[20260104122178-goal-for-2025|Goal for 2025.]] note.
 
 ```mermaid
 graph TD
-    MOC1["## Work. MOC."] --> Node1["[[20250803134529-goal-for-2025|Goal for 2025.]]"]
+    MOC1["## Work. MOC."] --> Node1["[[20260104122178-goal-for-2025|Goal for 2025.]]"]
     MOC2["## Finances. MOC."] --> Node1
     MOC3["## Languages. MOC."] --> Node1
     
@@ -268,7 +268,7 @@ graph TD
 ```
 
 **How it works**:
-1. **The Node**: You create one note: [[20250803134529-goal-for-2025|Goal for 2025.]].
+1. **The Node**: You create one note: [[20260104122178-goal-for-2025|Goal for 2025.]].
 2. **The Links**: You place this link into multiple descriptive MOCs, specifically under a header containing the `MOC.` trigger (e.g., `## Goals. MOC.`):
    - In your **Work** index (as it relates to career growth).
    - In your **Finances** index (as it requires a budget).
