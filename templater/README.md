@@ -8,7 +8,9 @@ This folder contains the core automation logic for the **ZID-based methodology**
 - [Smart Note Creation](#smart-note-creation)
 - [Seamless Renaming](#seamless-renaming)
 - [Automated Hierarchy](#automated-hierarchy)
+- [The MOC Engine](#the-moc-engine-_mocmd)
 - [Usage Examples](#usage-examples)
+- [Behind the Scenes](#behind-the-scenes-metadata--safety)
 - [Installation & Hotkeys](#installation--hotkeys)
 
 ---
