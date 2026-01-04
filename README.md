@@ -1,6 +1,6 @@
 # Obsidian Templates & Workflows
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/voothi/20250831153442-obsidian-templates)
+[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](https://github.com/voothi/20250831153442-obsidian-templates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A **ZID-based methodology** expressed through a curated collection of Obsidian templates and scripts. It implements a **ownership-partitioned** "Flat Base" architecture that decouples the **logical graph of knowledge** (Nodes & Links) from the **physical hierarchy of storage** (Files & Directories), enabling many-to-many knowledge structures and seamless AI collaboration.
@@ -313,7 +313,9 @@ A dedicated suite of utilities is planned for publication to help users migrate 
 Detailed changes for each version can be found in [release-notes.md](release-notes.md).
 
 ## RFCs
-Technical decisions and implementation details are documented in the [docs/rfcs/](docs/rfcs/) directory.
+Technical decisions and implementation details are documented in the [docs/rfcs/](docs/rfcs/) directory:
+- [20260104140151 - v1.1.0 Release: Vault Functionalization & ZID Re-anchoring](docs/rfcs/20260104140151-v1.1.0-release.md)
+- [20260103203107 - Documentation Overhaul](docs/rfcs/20260103203107-documentation-overhaul.md)
 
 [Return to Top](#table-of-contents)
 

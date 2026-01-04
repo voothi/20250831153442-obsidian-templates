@@ -1,5 +1,27 @@
 # Release Notes
 
+## v1.1.0 - 2026-01-04
+
+### Added
+- **Functional Example Vault**: The `vault/` directory is now a fully functional Obsidian vault.
+  - `vault/templates/`: Master scripts and planner configuration.
+  - `vault/voothi/`: Content catalog with live examples of MOCs, ZID Pivots, and Polymorphism.
+- **Interactive Documentation**: Technical manuals in `docs/` now feature "Active Links" (dual Wikilink/Markdown) for one-click navigation within Obsidian and on GitHub.
+- **Comprehensive RFC Tracking**: Added `docs/rfcs/` for tracking architectural decisions and version staging.
+- **ZID Mapping Utility**: Internal tools for re-indexing knowledge bases to new chronographic anchors.
+
+### Changed
+- **Directory Consolidation**: Simplified repository root by moving `templater/`, `daily-note-calendar/`, and `assets/` into a centralized `docs/` folder.
+- **ZID Baseline**: Re-anchored all example notes to a consistent `20260104` baseline.
+- **Terminology Harmonization**: Standardized "Automated Graph" and "MOC Engine" terminology across all manuals.
+- **Table of Contents Expansion**: Added H3 granularity to documentation TOCs for better discoverability.
+
+### Fixed
+- **Link Integrity Audit**: Resolved 100% of broken links caused by the `docs/` and `vault/` restructuring.
+- **Terminology Correction**: Changed "CVS" to "VCS" (Version Control System) in root documentation.
+- **Redundancy Pruning**: Removed conflicting legacy MOC entries and duplicate content files.
+
+
 ## v1.0.0 - 2026-01-03
 
 ### Added
