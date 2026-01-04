@@ -164,19 +164,20 @@ Turn a selection of lines starting with 14-digit timestamps (ZIDs) into clean Wi
 ```text
 20260104122205 This is the first sentence of the first entry. This is the second sentence which moves inside.
 
-- [ ] 20260104122204 This is the first sentence of the second entry.
+- [ ] 20260104122204 This is the first sentence of the second entry. This is the second sentence which moves inside.
 ```
 
 **Output (Updated Selection):**
 ```text
-[[20260104122205-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
+[[20260104122205-this-is-the-first|This is the first sentence of the first entry.]]
 
-- [ ] [[20260104122204-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
+- [ ] [[20260104122204-this-is-the-first|This is the first sentence of the second entry.]]
 ```
 
 **Active Links (Obsidian/Internal):**
-- [[20260104122205-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
-- [[20260104122204-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
+- [[20260104122205-this-is-the-first|This is the first sentence of the first entry.]]
+- [[20260104122204-this-is-the-first|This is the first sentence of the second entry.]]
+
 
 **What happens:**
 - **Sanitization**: Filenames/Wikilinks are automatically sanitized (handling spaces, special characters, and umlauts) while preserving the **original input language**.
