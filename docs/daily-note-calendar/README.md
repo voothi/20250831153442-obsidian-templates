@@ -1,6 +1,6 @@
 # Daily Note & Planner
 
-[![Plugin: Daily Note Calendar](https://img.shields.io/badge/Obsidian-Daily_Note_Calendar-ff7b72)](https://github.com/quandv/obsidian-daily-note-calendar)
+[![Plugin: Daily Note Calendar](https://img.shields.io/badge/Obsidian-Daily_Note_Calendar-ff7b72)](https://github.com/bartkessels/daily-note-calendar)
 
 This folder contains the templates and configuration details for the daily journaling and planning workflow.
 

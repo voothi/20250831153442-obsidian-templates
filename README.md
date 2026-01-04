@@ -226,7 +226,7 @@ Essential for running the `.md` scripts autonomously.
   - `Alt + S`: `templates/_update.md`
 
 ### Daily Note Calendar
-[Plugin Link](https://github.com/quandv/obsidian-daily-note-calendar)
+[Plugin Link](https://github.com/bartkessels/daily-note-calendar)
 
 Provides the calendar interface and manages temporal note structures.
 - **General**: Enable "Display notes created on selected date" and "Display an indicator on each date that has a note".
