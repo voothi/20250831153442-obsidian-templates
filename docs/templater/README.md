@@ -119,12 +119,12 @@ When you run `_moc.md`, every child listed in the Structure MOC automatically re
 The engine builds the logical tree using two rules:
 1. **Vertical (Indentation)**: Indented items are children of the line above them.
    - *Example*:
-     - [[20250803220646-work|Work.]]
-         - [[20250805215439-regular-routines|Regular routines.]]
-   - *Result*: `Regular routines.` receives `up: [[20250803220646-work]]`.
+     - [[20260104122155-work|Work.]]
+         - [[20260104122202-regular-routines|Regular routines.]]
+   - *Result*: `Regular routines.` receives `up: [[20260104122155-work]]`.
 2. **Horizontal (Same-Line)**: Multiple links on a single line form a chain from left-to-right.
    - *Example from day-planner.md*:
-     - [ ] 18:00 [[20250803220646-work|Work.]] [[20250803220746-block-3|Block 3.]] [[20250803220751-personal-development|Personal Development.]]
+     - [ ] 18:00 [[20260104122155-work|Work.]] [[20260104122190-block-3|Block 3.]] [[20260104122191-personal-development|Personal Development.]]
    - *Result*: `Block 3.` becomes a child of `Work.`, and `Personal Development.` becomes a child of `Block 3.`.
 
 ### 5. Technical Limitations & Synchronization Logic
@@ -277,15 +277,15 @@ graph TD
 3. **The Sync**: Running `_moc.md` automatically updates the note's frontmatter to reflect its multiple parents:
    ```yaml
    up:
-     - "[[20220201130701-work|Work.]]"
-     - "[[20220207181813-finances|Finances.]]"
-     - "[[20230104222039-languages|Languages.]]"
+     - "[[20260104122155-work|Work.]]"
+     - "[[20260104122160-finances|Finances.]]"
+     - "[[20260104122169-languages|Languages.]]"
    ```
 
 **Active Links (Obsidian/Internal):**
-- [[20220201130701-work|Work.]]
-- [[20220207181813-finances|Finances.]]
-- [[20230104222039-languages|Languages.]]
+- [[20260104122155-work|Work.]]
+- [[20260104122160-finances|Finances.]]
+- [[20260104122169-languages|Languages.]]
 
 **The Strategic Advantage**: Unlike folders, where you must choose *one* home for a file, this system allows information to live everywhere it is relevant. It enables the **polymorphic** existence of knowledge, allowing you to "twist" your perspective on the same data.
 
