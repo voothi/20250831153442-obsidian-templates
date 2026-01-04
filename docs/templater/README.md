@@ -224,6 +224,11 @@ How do you maintain the same thought across several languages (Russian, English,
 - [ ] [[20260103220434-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
 ```
 
+**Active Links (Obsidian/Internal):**
+- [ ] [[20260103220434-создать-кнопку-сделай-всё|Создать кнопку "Сделай всё хорошо" для пользователя системы.]]
+- [ ] [[20260103220434-create-a-do-everything|Create a “Do everything well” button for the system user.]]
+- [ ] [[20260103220434-erstellen-sie-einen-alles|Erstellen Sie einen „Alles gut machen“-Button für den Systembenutzer.]]
+
 **Why this works:**
 - **ZID as Anchor**: Searching for `20260103220434` will immediately list all available translations in your vault.
 - **Independence**: Each file is its own atomic unit with its own descriptive slug, yet they are logically tied together forever.
