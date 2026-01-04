@@ -17,7 +17,7 @@ A high-density planning template designed for focus and productivity.
 
 ### Features
 - **Hourly Schedule**: Pre-formatted blocks from 06:00 to 23:00.
-- **ZID First**: Deeply integrated with Zettelkasten IDs for referring to specific projects or tasks.
+- **ZID-based**: Deeply integrated with Zettelkasten IDs for referring to specific projects or tasks.
 - **MOC Focus**: Direct link to the daily Map of Content.
 - **Habit Tracking**: Incorporated slots for health (e.g., meditation, walking) and personal growth.
 

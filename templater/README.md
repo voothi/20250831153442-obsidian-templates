@@ -2,12 +2,12 @@
 
 [![Plugin: Templater](https://img.shields.io/badge/Obsidian-Templater-7d3ab2)](https://github.com/SilentVoid13/Templater)
 
-This folder contains the core automation logic for the Zettelkasten workflow. These scripts manage note creation, name sanitization, and hierarchical synchronization.
+This folder contains the core automation logic for the **ZID-based methodology**. These scripts manage note creation, name sanitization, and hierarchical synchronization.
 
 ## Table of Contents
 - [Smart Note Creation](#smart-note-creation)
-- [Title & Backlink Sync](#title--backlink-sync)
-- [Map of Content Synchronization](#map-of-content-synchronization)
+- [Seamless Renaming](#seamless-renaming)
+- [Automated Hierarchy](#automated-hierarchy)
 - [Usage Examples](#usage-examples)
 - [Installation & Hotkeys](#installation--hotkeys)
 
@@ -36,7 +36,7 @@ Automates the process of turning Zettelkasten IDs (ZIDs) or plain text into form
 
 [Return to Top](#table-of-contents)
 
-## Title & Backlink Sync
+## Seamless Renaming
 [_update.md](_update.md)
 Ensures that human-readable titles remain consistent throughout the vault.
 
@@ -51,7 +51,7 @@ Ensures that human-readable titles remain consistent throughout the vault.
 
 [Return to Top](#table-of-contents)
 
-## Map of Content Synchronization
+## Automated Hierarchy
 [_moc.md](_moc.md)
 
 The structural engine of the vault. It scans for specific headers to build and maintain the logical hierarchy of your notes.
