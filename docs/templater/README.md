@@ -167,6 +167,10 @@ Turn a selection of lines starting with 14-digit timestamps (ZIDs) into clean Wi
 - [ ] [[20251226135257-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
 ```
 
+**Active Links (Obsidian/Internal):**
+- [[20251226135208-this-is-the-first-sentence-of-the-first-entry|This is the first sentence of the first entry.]]
+- [[20251226135257-this-is-the-first-sentence-of-the-second-entry|This is the first sentence of the second entry.]]
+
 **What happens:**
 - **Sanitization**: Filenames/Wikilinks are automatically sanitized (handling spaces, special characters, and umlauts) while preserving the **original input language**.
 - **Title Extraction**: The first sentence (up to the first `.`) becomes the Wikilink label.
