@@ -247,32 +247,32 @@ How do you maintain the same thought across several languages (Russian, English,
 ### Case 6: Non-Linear Reasoning (The AI Web)
 The system allows a single unit of reasoning (an AI result, a hypothesis, a code snippet) to participate in **multiple logical chains** simultaneously. You can "twist" your knowledge base to look at the same data from different professional perspectives.
 
-**Example Scenario**: An AI provides a critical SQL optimization for a specific project.
+**Real-World Example**: The [[20250803134529-goal-for-2025|Goal for 2025.]] note.
 
 ```mermaid
 graph TD
-    MOC1["## Project Alpha. MOC"] --> Node1["[[20260103-sql-optimization|Optimization Result]]"]
-    MOC2["## SQL Performance. MOC"] --> Node1
-    MOC3["## Hypothesis #42. MOC"] --> Node1
+    MOC1["## Work"] --> Node1["[[20250803134529-goal-for-2025|Goal for 2025.]]"]
+    MOC2["## Finances"] --> Node1
+    MOC3["## Languages"] --> Node1
     
     style Node1 fill:#f9f,stroke:#333,stroke-width:2px
 ```
 
 **How it works**:
-1. **The Node**: You create one note: `[[20260103120000-sql-optimization]]`.
-2. **The Links**: You place this link into three different MOC files:
-   - Your **Project dashboard** (for task completion).
-   - Your **SQL Knowledge base** (for future reference).
-   - Your **Experiment log** (for comparing AI hypotheses).
-3. **The Sync**: Running `_moc.md` automatically updates the note's frontmatter to reflect its three parents:
+1. **The Node**: You create one note: [[20250803134529-goal-for-2025|Goal for 2025.]].
+2. **The Links**: You place this link into multiple descriptive MOCs, specifically under a header containing the `MOC.` trigger (e.g., `## Goals. MOC.`):
+   - In your **Work** index (as it relates to career growth).
+   - In your **Finances** index (as it requires a budget).
+   - In your **Languages** index (as the goal involves learning German).
+3. **The Sync**: Running `_moc.md` automatically updates the note's frontmatter to reflect its multiple parents:
    ```yaml
    up:
-     - "[[Project Alpha]]"
-     - "[[SQL Performance]]"
-     - "[[Hypothesis #42]]"
+     - "[[Work]]"
+     - "[[Finances]]"
+     - "[[Languages]]"
    ```
 
-**The Strategic Advantage**: Unlike folders, where you must choose *one* home for a file, this system allows information to live everywhere it is relevant. You can branch, compare, and merge logical paths at will.
+**The Strategic Advantage**: Unlike folders, where you must choose *one* home for a file, this system allows information to live everywhere it is relevant. It enables the **polymorphic** existence of knowledge, allowing you to "twist" your perspective on the same data.
 
 [Return to Top](#table-of-contents)
 
@@ -302,4 +302,4 @@ To use these scripts, copy them to your Templater templates folder and assign th
 | `_moc.md` | `Alt + A` | Synchronize Global MOCs |
 | `_update.md` | `Alt + S` | Update titles & backlinks |
 
-[Return to Top](#table-of-contents)2. **Horizontal (Same-Line)**: Multiple links on a single line form a chain from left-to-right (e.g., `- [[Parent]] [[Child]] [[Grandchild]]`).
+[Return to Top](#table-of-contents)
