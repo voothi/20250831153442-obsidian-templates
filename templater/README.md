@@ -116,9 +116,10 @@ What happens if a node appears multiple times?
 - **Same Parent, Multiple Places**: If `[[Node A]]` is listed under `[[Parent B]]` in two different files, the script **de-duplicates** the entry. `Node A` will have `up: [[Parent B]]` only once.
 - **Different Parents (Polymorphism)**: If `[[Node A]]` is listed under `[[Parent B]]` and also under `[[Parent C]]`, the script **merges** them. `Node A` will have `up: [[Parent B]], [[Parent C]]`.
 
+
 #### What happens if I delete a node?
-- **From an MOC**: If you remove a link from all MOC sections, the engine identifies it as an **Orphan**. On the next sync, it will surgically **clear** the `up` field from that note's YAML.
-- **From the Filesystem**: If the file itself is deleted, the engine simply skips it. Any underlying children in the MOC will "adopt" the next available parent in the stack.
+- **Partial Deletion (Survivor Logic)**: If a node is removed from *one* MOC but exists in another (or even in a branch of the same MOC), the script effectively "garbage collects" the dead link. It updates the `up` field to remove the deleted parent while **preserving** the surviving parents.
+- **Orphan (Full Deletion)**: Only when a link is removed from **all** MOC sections does the engine surgically **clear** the `up` field entirely.
 
 #### Synchronization Hooks
 - **Global Scope**: `_moc.md` scans the *entire* vault. It is a "heavy" operation designed for periodic structural alignment.
