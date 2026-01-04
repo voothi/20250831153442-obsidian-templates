@@ -1,7 +1,0 @@
-﻿---
-aliases:
-  - Books.
-up: "[[20260104122165-structure-moc]]"
----
-
-# Books.

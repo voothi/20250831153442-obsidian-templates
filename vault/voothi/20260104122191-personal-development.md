@@ -1,7 +1,30 @@
-﻿---
-aliases:
+---
+aliases: 
   - Personal Development.
-up: 
+up: "[[20260104122190-block-3]]"
+type: 
+status: 
+down: 
+prev: 
+next: 
+same: 
+project: 
+area: 
+tags: []
+created: 2026-01-04
+due: 
 ---
 
 # Personal Development.
+
+## Description
+
+
+
+## MOC.
+
+
+
+## Notes
+
+
