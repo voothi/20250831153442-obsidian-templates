@@ -1,5 +1,12 @@
 # Release Notes
 
+## v1.2.0 - 2026-01-05
+
+### Changed
+- **Logic Unification**: `vault/templates/_new.md` now shares identical regex and sanitization logic with `ref/obsidian_zid_wikilink.py`.
+- **Heading Support**: ZID detection (`zidLineRegex`) now supports Markdown headings (`#` through `######`) as prefixes.
+- **Improved Sanitization**: Added support for Eszett (`ẞ`) and better handling of periods in filenames.
+
 ## v1.1.0 - 2026-01-04
 
 ### Added
