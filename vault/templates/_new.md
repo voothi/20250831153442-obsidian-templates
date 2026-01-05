@@ -9,9 +9,9 @@ const SLUG_WORD_COUNT = 4; // Number of words to keep in the filename slug.
 // 1. Sanitize File Names
 function sanitizeName(inputString) {
     const replacements = {
-        'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss',
+        'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss', 'ẞ': 'ss',
         'Ä': 'ae', 'Ö': 'oe', 'Ü': 'ue', 
-        '_': '-', ':': '-', '. ': '-', '.': '-'
+        '_': '-', ':': '-', '.': '-'
     };
 
     let processedString = inputString;
@@ -115,7 +115,7 @@ if (allUniqueTags.length > 0) {
 
 // Regex Definitions
 const linkRegex = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
-const zidLineRegex = /^(\s*(?:(?:[-*+]|\d+\.)(?:\s+\[[ xX]\])?\s+)?)(\d{14})\s+(.*)$/;
+const zidLineRegex = /^(\s*(?:(?:[-*+]|\d+\.)(?:\s+\[[ xX]\])?\s+|#{1,6}\s+)?)(\d{14})\s+(.*)$/;
 
 const lines = selection.split(/\r?\n/);
 const hasZidLines = lines.some(line => zidLineRegex.test(line));
@@ -232,12 +232,12 @@ if (hasZidLines) {
     let cleanTaskName = originalText;
     let descriptionText = "";
 
-    const zidMatch = originalText.match(/^(\d{14})\s+(.*)$/s);
+    const zidMatch = originalText.match(zidLineRegex);
     let existingZid = null;
 
     if (zidMatch) {
-        existingZid = zidMatch[1];
-        cleanTaskName = zidMatch[2].trim();
+        existingZid = zidMatch[2]; // Group 2 is the ZID
+        cleanTaskName = zidMatch[3].trim(); // Group 3 is the text
     } 
 
     if (SPLIT_DESCRIPTION) {
