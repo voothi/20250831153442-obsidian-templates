@@ -11,7 +11,7 @@ function sanitizeName(inputString) {
     const replacements = {
         'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss', 'ẞ': 'ss',
         'Ä': 'ae', 'Ö': 'oe', 'Ü': 'ue', 
-        '_': '-', ':': '-', '.': '-'
+        '_': '-', ':': '-', '. ': '-', '.': '-'
     };
 
     let processedString = inputString;
